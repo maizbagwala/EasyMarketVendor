@@ -1,11 +1,15 @@
 package com.dexterapps.easymarketvendor.home
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.TextView
+import androidx.fragment.app.Fragment
 import com.dexterapps.easymarketvendor.R
+import com.dexterapps.easymarketvendor.config.Variables
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,9 +37,57 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        val view: View = inflater.inflate(R.layout.fragment_home, container, false)
+        val tvDashboard: TextView = view.findViewById(R.id.b_tab_dashboard_tv)
+        val tvOrder: TextView = view.findViewById(R.id.b_tab_order_tv)
+        val tab_dashboard: LinearLayout = view.findViewById(R.id.b_tab_dashboard)
+        val iv_dashboard: ImageView = view.findViewById(R.id.b_tab_dashboard_iv)
+        val tv_dashboard: TextView = view.findViewById(R.id.b_tab_dashboard_tv)
+        val tab_order: LinearLayout = view.findViewById(R.id.b_tab_order)
+        val iv_order: ImageView = view.findViewById(R.id.b_tab_order_iv)
+        val tv_order: TextView = view.findViewById(R.id.b_tab_order_tv)
+
+        tvOrder.visibility = View.GONE
+        tvDashboard.visibility = View.VISIBLE
+        tab_dashboard.setBackgroundResource(R.drawable.custom_green_bg_square)
+        tab_order.setBackgroundResource(R.drawable.custom_border_bg_square)
+        tvDashboard.setTextColor(resources.getColor(R.color.white))
+        iv_dashboard.setImageResource(R.drawable.ic_nav_dashboard)
+        iv_order.setImageResource(R.drawable.ic_nav_dashboard_green)
+        loadHomeFragment(DashboardTabFragment(), Variables.TAG_DASHBOARD)
+
+        tab_dashboard.setOnClickListener {
+            tvOrder.visibility = View.GONE
+            tvDashboard.visibility = View.VISIBLE
+            tab_dashboard.setBackgroundResource(R.drawable.custom_green_bg_square)
+            tab_order.setBackgroundResource(R.drawable.custom_border_bg_square)
+            tvDashboard.setTextColor(resources.getColor(R.color.white))
+            iv_dashboard.setImageResource(R.drawable.ic_nav_dashboard)
+            iv_order.setImageResource(R.drawable.ic_nav_dashboard_green)
+            loadHomeFragment(DashboardTabFragment(), Variables.TAG_DASHBOARD)
+
+        }
+        view.findViewById<LinearLayout>(R.id.b_tab_order).setOnClickListener {
+            tvDashboard.visibility = View.GONE
+            tvOrder.visibility = View.VISIBLE
+            tab_dashboard.setBackgroundResource(R.drawable.custom_border_bg_square)
+            tab_order.setBackgroundResource(R.drawable.custom_green_bg_square)
+            tvOrder.setTextColor(resources.getColor(R.color.white))
+            iv_dashboard.setImageResource(R.drawable.ic_nav_dashboard_green)
+            iv_order.setImageResource(R.drawable.ic_nav_dashboard)
+            loadHomeFragment(NewOrderTabFragment(), Variables.TAG_NEW_ORDER)
+
+        }
+
+
+        return view
+    }
+
+    private fun loadHomeFragment(fragment: Fragment, tag: String) {
+        childFragmentManager.beginTransaction().replace(R.id.frag_host_home, fragment).commit()
+
     }
 
     companion object {
