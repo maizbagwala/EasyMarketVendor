@@ -24,7 +24,7 @@ class OrderHistoryFragment : Fragment() {
     private var orderHistoryModel: OrderHistoryModel? = null
     private val orderHistoryModelArrayList: MutableList<OrderHistoryModel> = ArrayList()
     private var orderHistoryAdapter: OrderHistoryAdapter? = null
-    private var rv_pending_order_history: RecyclerView? = null
+    private var rv_order_history: RecyclerView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,35 +45,74 @@ class OrderHistoryFragment : Fragment() {
         ll_past_delivery = root?.findViewById(R.id.ll_past_delivery)
         tv_pending = root?.findViewById(R.id.tv_pending)
         tv_past = root?.findViewById(R.id.tv_past)
-        rv_pending_order_history = root?.findViewById(R.id.rv_pending_order_history)
+        rv_order_history = root?.findViewById(R.id.rv_order_history)
 
         initClick()
 
-        orderHistoryModelArrayList.clear()
         orderHistoryAdapter = OrderHistoryAdapter(getContext()!!, orderHistoryModelArrayList)
         val layoutManager = LinearLayoutManager(getContext())
         layoutManager.orientation = LinearLayoutManager.VERTICAL
-        rv_pending_order_history!!.layoutManager = layoutManager
-        rv_pending_order_history!!.itemAnimator = DefaultItemAnimator()
-        rv_pending_order_history!!.adapter = orderHistoryAdapter
+        rv_order_history!!.layoutManager = layoutManager
+        rv_order_history!!.itemAnimator = DefaultItemAnimator()
+        rv_order_history!!.adapter = orderHistoryAdapter
 
-        loadData()
-
-
-
-        orderHistoryAdapter!!.notifyDataSetChanged()
+        loadDataPending()
 
 
     }
 
-    private fun loadData() {
+    private fun loadDataPending() {
+        orderHistoryModelArrayList.clear()
+
         for (i in 1..10) {
             orderHistoryModel = OrderHistoryModel(
                 "1",
-                "https://images.pexels.com/photos/1300972/pexels-photo-1300972.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                "Varun Jhaveri",
+                "05",
+                "0123456789",
+                " 12,340\$",
+                "22/02/2021 At 11:00 Am",
+                "100\$",
+                "05",
+                "Home Delivery",
+                "Online",
+                "Accepted",
+                "Delivery Done",
+                "9874561230",
+                "1,kumud app, B/h Gwalia\\n vasna, Ahmedabad, 380007, Gujrat, India"
+
             )
             orderHistoryModelArrayList.add(orderHistoryModel!!)
         }
+        orderHistoryAdapter!!.notifyDataSetChanged()
+
+    }
+
+    private fun loadDataPast() {
+        orderHistoryModelArrayList.clear()
+
+
+        orderHistoryModel = OrderHistoryModel(
+            "1",
+            "Varun Jhaveri",
+            "05",
+            "0123456789",
+            " 12,340\$",
+            "22/02/2021 At 11:00 Am",
+            "100\$",
+            "05",
+            "Home Delivery",
+            "Online",
+            "Accepted",
+            "Delivery Pending",
+            "9874561230",
+            "1,kumud app, B/h Gwalia\\n vasna, Ahmedabad, 380007, Gujrat, India"
+
+            )
+        orderHistoryModelArrayList.add(orderHistoryModel!!)
+
+        orderHistoryAdapter!!.notifyDataSetChanged()
+
     }
 
     private fun initClick() {
@@ -87,7 +126,7 @@ class OrderHistoryFragment : Fragment() {
 
             tv_pending!!.setTextColor(ContextCompat.getColor(context!!, R.color.white))
             tv_past!!.setTextColor(ContextCompat.getColor(context!!, R.color.colorGreen))
-
+            loadDataPending()
 
         }
         ll_past_delivery?.setOnClickListener {
@@ -99,6 +138,7 @@ class OrderHistoryFragment : Fragment() {
 
             tv_pending!!.setTextColor(ContextCompat.getColor(context!!, R.color.colorGreen))
             tv_past!!.setTextColor(ContextCompat.getColor(context!!, R.color.white))
+            loadDataPast()
         }
     }
 

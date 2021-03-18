@@ -27,10 +27,10 @@ class MainActivity : AppCompatActivity() {
 
     fun onNavClick(view: View) {
         when (view.id) {
-            R.id.nav_order_history -> {
+            R.id.ll_order_history -> {
 
                 loadFragment(OrderHistoryFragment(), Variables.TAG_ORDER_HISTORY)
-                Toast.makeText(this, "order history clicked", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this, "order history clicked", Toast.LENGTH_SHORT).show()
             }
 
         }

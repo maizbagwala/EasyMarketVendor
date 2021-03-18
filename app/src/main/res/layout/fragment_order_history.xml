@@ -6,20 +6,13 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_pending_order_history"
+        android:id="@+id/rv_order_history"
         tools:itemCount="100"
         tools:listitem="@layout/item_order_history_row"
         android:layout_width="match_parent"
         android:layout_marginBottom="50dp"
         android:layout_height="match_parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_past_order_history"
-        tools:itemCount="100"
-        tools:listitem="@layout/item_order_history_row"
-        android:layout_width="match_parent"
-        android:layout_marginBottom="50dp"
-        android:layout_height="match_parent" />
 
     <LinearLayout
         android:layout_width="match_parent"
