@@ -1,10 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
+    <!-- google_pixel_3xl___1 colors -->
+
+    <color name="colorPrimary">#94B403</color>
+    <color name="colorPrimaryDark">#799303</color>
+    <color name="colorAccent">#94B403</color>
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="_bg__google_pixel_3xl___7_color">#ffffff</color>
+    <color name="rectangle_11_color">#f6f6f6</color>
+    <color name="register__color">#000000</color>
+    <color name="ellipse_8_color">#94b403</color>
+    <color name="register_color">#ffffff</color>
+    <color name="terms___conditions_color">#72828f</color>
+
+
+    <!--    My color pallet-->
+    <color name="colorBlue">#5881BC</color>
+    <color name="colorGreen">#94B403</color>
+    <color name="colorRed">#F11924</color>
+    <color name="colorDarkBlue">#263852</color>
+    <color name="colorGrey">#D5D5D5</color>
+    <color name="color1">#72828F</color>
+    <color name="color2">#263852</color>
+    <color name="color3">#F5F5F5</color>
+    <color name="color4">#FBFBFB</color>
+    <color name="color5">#707070</color>
 </resources>
