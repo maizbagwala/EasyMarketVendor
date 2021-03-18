@@ -11,6 +11,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.dexterapps.easymarketvendor.config.Variables
+import com.dexterapps.easymarketvendor.home.HomeFragment
 import com.dexterapps.easymarketvendor.orderHistory.OrderHistoryFragment
 import com.google.android.material.navigation.NavigationView
 
@@ -24,7 +25,9 @@ class MainActivity : AppCompatActivity() {
         drawer = findViewById(R.id.drawer_layout)
         navigationView = findViewById(R.id.nav_view)
         mFragmentManager = supportFragmentManager
-//        loadFragment(HomeFragment(), Variables.TAG_HOME_FRAGMENT)
+
+        loadFragment(HomeFragment(), Variables.TAG_HOME_FRAGMENT)
+
 
         nav_btn.setOnClickListener {
             if (!drawer.isDrawerOpen(Gravity.LEFT)) {
@@ -60,17 +63,14 @@ class MainActivity : AppCompatActivity() {
         lateinit var drawer: DrawerLayout
         lateinit var navigationView: NavigationView
         lateinit var mFragmentManager: FragmentManager
-        fun loadFragment(fragment: Fragment, tag: String) {
-            closeDrawer()
-            mFragmentManager.beginTransaction().replace(R.id.frag_host, fragment)
+        fun loadFragment(fragment: Fragment, tag: String, id: Int = R.id.frag_host) {
+            mFragmentManager.beginTransaction().replace(id, fragment)
                 .addToBackStack(tag)
                 .commit()
-        }
-
-        fun closeDrawer() {
-            if (drawer!!.isDrawerOpen(GravityCompat.START)) {
-                drawer!!.closeDrawer(GravityCompat.START)
+            if (drawer.isDrawerOpen(GravityCompat.START)) {
+                drawer.closeDrawer(GravityCompat.START)
             }
         }
+
     }
 }

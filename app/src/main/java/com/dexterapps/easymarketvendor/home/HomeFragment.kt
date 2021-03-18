@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.dexterapps.easymarketvendor.MainActivity
 import com.dexterapps.easymarketvendor.R
 import com.dexterapps.easymarketvendor.config.Variables
 
@@ -56,7 +57,10 @@ class HomeFragment : Fragment() {
         tvDashboard.setTextColor(resources.getColor(R.color.white))
         iv_dashboard.setImageResource(R.drawable.ic_nav_dashboard)
         iv_order.setImageResource(R.drawable.ic_nav_dashboard_green)
-        loadHomeFragment(DashboardTabFragment(), Variables.TAG_DASHBOARD)
+        MainActivity.loadFragment(
+            DashboardTabFragment(), Variables.TAG_DASHBOARD,
+            R.id.frag_host_home
+        )
 
         tab_dashboard.setOnClickListener {
             tvOrder.visibility = View.GONE
@@ -66,7 +70,10 @@ class HomeFragment : Fragment() {
             tvDashboard.setTextColor(resources.getColor(R.color.white))
             iv_dashboard.setImageResource(R.drawable.ic_nav_dashboard)
             iv_order.setImageResource(R.drawable.ic_nav_dashboard_green)
-            loadHomeFragment(DashboardTabFragment(), Variables.TAG_DASHBOARD)
+            MainActivity.loadFragment(
+                DashboardTabFragment(), Variables.TAG_DASHBOARD,
+                R.id.frag_host_home
+            )
 
         }
         view.findViewById<LinearLayout>(R.id.b_tab_order).setOnClickListener {
@@ -77,7 +84,11 @@ class HomeFragment : Fragment() {
             tvOrder.setTextColor(resources.getColor(R.color.white))
             iv_dashboard.setImageResource(R.drawable.ic_nav_dashboard_green)
             iv_order.setImageResource(R.drawable.ic_nav_dashboard)
-            loadHomeFragment(NewOrderTabFragment(), Variables.TAG_NEW_ORDER)
+            MainActivity.loadFragment(
+                NewOrderTabFragment(),
+                Variables.TAG_NEW_ORDER,
+                R.id.frag_host_home
+            )
 
         }
 
@@ -85,10 +96,11 @@ class HomeFragment : Fragment() {
         return view
     }
 
-    private fun loadHomeFragment(fragment: Fragment, tag: String) {
-        childFragmentManager.beginTransaction().replace(R.id.frag_host_home, fragment).commit()
-
-    }
+//    private fun loadHomeFragment(fragment: Fragment, tag: String) {
+//        parentFragmentManager.beginTransaction().replace(R.id.frag_host_home, fragment)
+//            .commit()
+//
+//    }
 
     companion object {
         /**
