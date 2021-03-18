@@ -110,6 +110,7 @@
 
 
             <LinearLayout
+                android:id="@+id/ll_order_history"
                 style="@style/nav_ll_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

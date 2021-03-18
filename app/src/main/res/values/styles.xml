@@ -30,6 +30,11 @@
         <item name="android:layout_marginLeft">12dp</item>
     </style>
 
+    <style name="default_text">
+        <item name="android:textSize">12sp</item>
+
+    </style>
+
     <style name="nav_ll_item">
         <item name="android:paddingTop">@dimen/dp_10</item>
         <item name="android:paddingBottom">@dimen/dp_10</item>
