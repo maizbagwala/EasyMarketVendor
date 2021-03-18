@@ -102,6 +102,7 @@
                 <TextView
                     android:id="@+id/nav_delivery_slots"
                     style="@style/nav_text_item"
+                    android:onClick="onNavClick"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="delivery slots" />

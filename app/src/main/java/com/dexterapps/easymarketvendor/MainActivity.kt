@@ -6,10 +6,15 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+
 import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.navigation.NavigationView
+
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import com.google.android.material.navigation.NavigationView
+import com.dexterapps.easymarketvendor.config.Variables
+import com.dexterapps.easymarketvendor.delivery_slots.delivery_slots
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,6 +43,13 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "order history clicked", Toast.LENGTH_SHORT).show()
             }
 
+            R.id.nav_delivery_slots -> {
+
+                loadFragment(fragment = delivery_slots(), Variables.TAG_DELIVERY_SLOT)
+
+
+            }
+
         }
     }
 
@@ -59,6 +71,11 @@ class MainActivity : AppCompatActivity() {
             mFragmentManager.beginTransaction().replace(R.id.frag_host, fragment)
                 .addToBackStack(tag)
                 .commit()
+
+            if (drawer.isDrawerOpen(Gravity.LEFT)) {
+                drawer.closeDrawer(Gravity.LEFT)
+            }
         }
     }
+
 }
