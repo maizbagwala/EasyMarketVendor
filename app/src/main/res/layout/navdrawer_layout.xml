@@ -110,6 +110,8 @@
 
 
             <LinearLayout
+
+                android:onClick="onNavClick"
                 android:id="@+id/ll_order_history"
                 style="@style/nav_ll_item"
                 android:layout_width="match_parent"
@@ -127,7 +129,6 @@
                     android:src="@drawable/ic_nav_order_history" />
 
                 <TextView
-                    android:onClick="onNavClick"
                     android:id="@+id/nav_order_history"
                     style="@style/nav_text_item"
                     android:layout_width="wrap_content"
