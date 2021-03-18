@@ -31,9 +31,11 @@
             android:src="@drawable/ic_bell" />
     </RelativeLayout>
 
-    <FrameLayout
+    <fragment
         android:id="@+id/frag_host"
+        android:name="com.dexterapps.easymarketvendor.home.HomeFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
 
 </LinearLayout>

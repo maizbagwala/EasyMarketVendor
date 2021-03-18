@@ -1,6 +1,7 @@
 package com.dexterapps.easymarketvendor
 
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
@@ -20,6 +21,15 @@ class MainActivity : AppCompatActivity() {
         drawer = findViewById(R.id.drawer_layout)
         navigationView = findViewById(R.id.nav_view)
         mFragmentManager = supportFragmentManager
+//        loadFragment(HomeFragment(), Variables.TAG_HOME_FRAGMENT)
+
+        nav_btn.setOnClickListener {
+            if (!drawer.isDrawerOpen(Gravity.LEFT)) {
+                drawer.openDrawer(Gravity.LEFT)
+            } else {
+                drawer.closeDrawer(Gravity.LEFT)
+            }
+        }
     }
 
     fun onNavClick(view: View) {
@@ -31,6 +41,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onBackPressed() {
+        if (drawer.isDrawerOpen(Gravity.LEFT)) {
+            drawer.closeDrawer(Gravity.LEFT)
+        } else {
+
+            super.onBackPressed()
+        }
+    }
 
     companion object {
         lateinit var nav_btn: ImageView

@@ -2,7 +2,7 @@
 <resources>
     <!-- google_pixel_3xl___1 strings -->
 
-    <string name="app_name">EasyMarket</string>
+    <string name="app_name">Vendor-EasyMarket</string>
     <string name="ek_img_content">ExportKit Image</string>
     <string name="register__string">REGISTER</string>
     <string name="first_name_string">First name</string>
