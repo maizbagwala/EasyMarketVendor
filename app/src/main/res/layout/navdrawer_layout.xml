@@ -111,7 +111,6 @@
 
             <LinearLayout
 
-                android:onClick="onNavClick"
                 android:id="@+id/ll_order_history"
                 style="@style/nav_ll_item"
                 android:layout_width="match_parent"
@@ -120,6 +119,7 @@
                 android:focusable="true"
                 android:foreground="?android:selectableItemBackground"
                 android:gravity="center_vertical"
+                android:onClick="onNavClick"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -165,6 +165,7 @@
 
 
             <LinearLayout
+                android:id="@+id/ll_offer_creation"
                 style="@style/nav_ll_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -172,6 +173,7 @@
                 android:focusable="true"
                 android:foreground="?android:selectableItemBackground"
                 android:gravity="center_vertical"
+                android:onClick="onNavClick"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -191,6 +193,8 @@
 
 
             <LinearLayout
+                android:onClick="onNavClick"
+                android:id="@+id/ll_my_profile"
                 style="@style/nav_ll_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

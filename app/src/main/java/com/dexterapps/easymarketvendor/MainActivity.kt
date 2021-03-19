@@ -10,6 +10,8 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.dexterapps.easymarketvendor.config.Variables
+import com.dexterapps.easymarketvendor.myProfile.MyProfile
+import com.dexterapps.easymarketvendor.offerCreation.OfferCreation
 import com.dexterapps.easymarketvendor.orderHistory.OrderHistoryFragment
 import com.google.android.material.navigation.NavigationView
 
@@ -30,6 +32,16 @@ class MainActivity : AppCompatActivity() {
             R.id.ll_order_history -> {
 
                 loadFragment(OrderHistoryFragment(), Variables.TAG_ORDER_HISTORY)
+//                Toast.makeText(this, "order history clicked", Toast.LENGTH_SHORT).show()
+            }
+            R.id.ll_offer_creation -> {
+
+                loadFragment(OfferCreation(), Variables.TAG_OFFER_CREATION)
+//                Toast.makeText(this, "order history clicked", Toast.LENGTH_SHORT).show()
+            }
+            R.id.ll_my_profile -> {
+
+                loadFragment(MyProfile(), Variables.TAG_MY_PROFILE)
 //                Toast.makeText(this, "order history clicked", Toast.LENGTH_SHORT).show()
             }
 
@@ -55,4 +67,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+
 }
