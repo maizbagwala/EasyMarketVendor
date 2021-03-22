@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
-import com.dexterapps.easymarket.myCart.model.OrderHistoryModel
+import com.dexterapps.easymarketvendor.orderHistory.model.OrderHistoryModel
 import com.dexterapps.easymarketvendor.R
 
 class OrderHistoryAdapter(
@@ -24,7 +24,7 @@ class OrderHistoryAdapter(
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val data = dataList[position]
 
-        if (data.d_status.equals("Delivery Pending")) {
+        if (data.d_status == "Delivery Pending") {
             holder.tv_d_status!!.setTextColor(ContextCompat.getColor(context,R.color.color7))
         } else {
             holder.tv_d_status!!.setTextColor(ContextCompat.getColor(context,R.color.colorGreen))
