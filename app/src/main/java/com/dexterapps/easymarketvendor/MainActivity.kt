@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.Gravity
 import android.view.View
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -43,6 +42,11 @@ class MainActivity : AppCompatActivity() {
             R.id.ll_order_history -> {
 
                 loadFragment(OrderHistoryFragment(), Variables.TAG_ORDER_HISTORY)
+//                Toast.makeText(this, "order history clicked", Toast.LENGTH_SHORT).show()
+            }
+            R.id.nav_dashboard -> {
+
+                loadFragment(HomeFragment(), Variables.TAG_ORDER_HISTORY)
 //                Toast.makeText(this, "order history clicked", Toast.LENGTH_SHORT).show()
             }
 

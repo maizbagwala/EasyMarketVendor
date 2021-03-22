@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="20dp"
+    android:layout_marginVertical="20dp"
     android:background="@drawable/custom_border_bg">
 
 
@@ -50,30 +50,6 @@
             </LinearLayout>
 
 
-            <LinearLayout
-
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="end"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Total item - "
-
-                    android:textColor="@color/black" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="05"
-
-                    android:textColor="@color/black" />
-
-
-            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -118,19 +94,16 @@
                 android:gravity="end"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Amount :"
-
-                    android:textColor="@color/colorGreen" />
 
                 <TextView
+                    android:id="@+id/btn_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" 12,340$"
-
-                    android:textColor="@color/colorGreen" />
+                    android:background="@color/colorGreen"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="2dp"
+                    android:text="View"
+                    android:textColor="@color/white" />
 
 
             </LinearLayout>
@@ -170,30 +143,6 @@
             </LinearLayout>
 
 
-            <LinearLayout
-
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="end"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Delivery Fee : "
-
-                    android:textColor="@color/colorGreen" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="100$"
-
-                    android:textColor="@color/colorGreen" />
-
-
-            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -320,9 +269,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Accepted"
+                android:text="Pending"
 
-                android:textColor="@color/colorGreen" />
+                android:textColor="#FFA52F" />
 
 
         </LinearLayout>
@@ -344,60 +293,15 @@
                 android:id="@+id/tv_d_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Delivery Done"
-
-                android:textColor="@color/colorGreen" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="1">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mobile No - "
-
-                android:textColor="@color/black" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="9874561230"
-
-                android:textColor="@color/color6" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Delivery Address - "
-
-                android:textColor="@color/black" />
-
-            <TextView
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1,kumud app, B/h Gwalia\n vasna, Ahmedabad, 380007, Gujrat, India"
+                android:text="N/A"
                 android:textColor="@color/color6"
 
-                android:textSize="11sp" />
+                />
 
 
         </LinearLayout>
+
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

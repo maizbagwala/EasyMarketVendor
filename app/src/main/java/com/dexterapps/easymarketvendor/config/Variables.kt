@@ -19,5 +19,6 @@ object Variables {
     const val TAG_NEW_ORDER = "new_order"
     const val TAG_ORDER_HISTORY = "order_history"
     const val TAG_HOME_FRAGMENT = "home_fragment"
+    const val TAG_VIEW_ORDER = "view_order_fragment"
 
 }

@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.dexterapps.easymarket.myCart.adapter.OrderHistoryAdapter
+import com.dexterapps.easymarketvendor.orderHistory.adapter.OrderHistoryAdapter
 import com.dexterapps.easymarket.myCart.model.OrderHistoryModel
 import com.dexterapps.easymarketvendor.R
 import java.util.ArrayList
