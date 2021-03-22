@@ -3,7 +3,6 @@ package com.dexterapps.easymarketvendor.delivery_slots
 import android.annotation.SuppressLint
 import android.app.TimePickerDialog
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,7 +34,7 @@ class delivery_slots : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         root = inflater.inflate(R.layout.fragment_delivery_slots, container, false)
 
@@ -74,20 +73,18 @@ class delivery_slots : Fragment() {
 
         // To time
 
-        TimePicker = TimePickerDialog(context, object : TimePickerDialog.OnTimeSetListener {
-            override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
-                var AM_PM: String
-                if (hourOfDay < 12) {
-                    AM_PM = "AM";
+        TimePicker = TimePickerDialog(
+            context,
+            { view, hourOfDay, minute ->
+                val AM_PM: String = if (hourOfDay < 12) {
+                    "AM";
                 } else {
-                    AM_PM = "PM";
+                    "PM";
                 }
 
-                to_time.setText(String.format("%d : %d", hourOfDay, minute) + " " + AM_PM)
-
-
-            }
-        }, hour, minute, false)
+                to_time.text = String.format("%d : %d", hourOfDay, minute) + " " + AM_PM
+            }, hour, minute, false
+        )
 
 
 
@@ -109,145 +106,31 @@ class delivery_slots : Fragment() {
 
         sunday.setOnClickListener {
             test(it)
-//            sunday.setBackgroundResource(R.drawable.delivery_slots_time_click)
-//
-//            monday.setBackgroundResource(R.drawable.delivery_slots_bg)
-//            Thursday.setBackgroundResource(R.drawable.delivery_slots_bg)
-//            Wednesday.setBackgroundResource(R.drawable.delivery_slots_bg)
-//            Tuesday.setBackgroundResource(R.drawable.delivery_slots_bg)
-//            Friday.setBackgroundResource(R.drawable.delivery_slots_bg)
-//            Saturday.setBackgroundResource(R.drawable.delivery_slots_bg)
-//
-//            //text color
-//
-//            sunday.setTextColor(getResources().getColor(R.color.white))
-//            monday.setTextColor(getResources().getColor(R.color.black))
-//            Thursday.setTextColor(getResources().getColor(R.color.black))
-//            Wednesday.setTextColor(getResources().getColor(R.color.black))
-//            Tuesday.setTextColor(getResources().getColor(R.color.black))
-//            Friday.setTextColor(getResources().getColor(R.color.black))
-//            Saturday.setTextColor(getResources().getColor(R.color.black))
+
         }
         monday.setOnClickListener {
             test(it)
-//            monday.setBackgroundResource(R.drawable.delivery_slots_time_click)
-//            sunday.setBackgroundResource(R.drawable.delivery_slots_bg)
-//            Thursday.setBackgroundResource(R.drawable.delivery_slots_bg)
-//            Wednesday.setBackgroundResource(R.drawable.delivery_slots_bg)
-//            Tuesday.setBackgroundResource(R.drawable.delivery_slots_bg)
-//            Friday.setBackgroundResource(R.drawable.delivery_slots_bg)
-//            Saturday.setBackgroundResource(R.drawable.delivery_slots_bg)
-//
-//            //text color
-//
-//            sunday.setTextColor(getResources().getColor(R.color.black))
-//            monday.setTextColor(getResources().getColor(R.color.white))
-//            Thursday.setTextColor(getResources().getColor(R.color.black))
-//            Wednesday.setTextColor(getResources().getColor(R.color.black))
-//            Tuesday.setTextColor(getResources().getColor(R.color.black))
-//            Friday.setTextColor(getResources().getColor(R.color.black))
-//            Saturday.setTextColor(getResources().getColor(R.color.black))
         }
 
         Thursday.setOnClickListener {
-            monday.setBackgroundResource(R.drawable.delivery_slots_bg)
-            sunday.setBackgroundResource(R.drawable.delivery_slots_bg)
-            Thursday.setBackgroundResource(R.drawable.delivery_slots_time_click)
-            Wednesday.setBackgroundResource(R.drawable.delivery_slots_bg)
-            Tuesday.setBackgroundResource(R.drawable.delivery_slots_bg)
-            Friday.setBackgroundResource(R.drawable.delivery_slots_bg)
-            Saturday.setBackgroundResource(R.drawable.delivery_slots_bg)
-
-            //text color
-
-            sunday.setTextColor(getResources().getColor(R.color.black))
-            monday.setTextColor(getResources().getColor(R.color.black))
-            Thursday.setTextColor(getResources().getColor(R.color.white))
-            Wednesday.setTextColor(getResources().getColor(R.color.black))
-            Tuesday.setTextColor(getResources().getColor(R.color.black))
-            Friday.setTextColor(getResources().getColor(R.color.black))
-            Saturday.setTextColor(getResources().getColor(R.color.black))
+            test(it)
         }
         Wednesday.setOnClickListener {
-            monday.setBackgroundResource(R.drawable.delivery_slots_bg)
-            sunday.setBackgroundResource(R.drawable.delivery_slots_bg)
-            Thursday.setBackgroundResource(R.drawable.delivery_slots_bg)
-            Wednesday.setBackgroundResource(R.drawable.delivery_slots_time_click)
-            Tuesday.setBackgroundResource(R.drawable.delivery_slots_bg)
-            Friday.setBackgroundResource(R.drawable.delivery_slots_bg)
-            Saturday.setBackgroundResource(R.drawable.delivery_slots_bg)
-
-            //text color
-
-            sunday.setTextColor(getResources().getColor(R.color.black))
-            monday.setTextColor(getResources().getColor(R.color.black))
-            Thursday.setTextColor(getResources().getColor(R.color.black))
-            Wednesday.setTextColor(getResources().getColor(R.color.white))
-            Tuesday.setTextColor(getResources().getColor(R.color.black))
-            Friday.setTextColor(getResources().getColor(R.color.black))
-            Saturday.setTextColor(getResources().getColor(R.color.black))
+            test(it)
         }
         Tuesday.setOnClickListener {
-            monday.setBackgroundResource(R.drawable.delivery_slots_bg)
-            sunday.setBackgroundResource(R.drawable.delivery_slots_bg)
-            Thursday.setBackgroundResource(R.drawable.delivery_slots_bg)
-            Wednesday.setBackgroundResource(R.drawable.delivery_slots_bg)
-            Tuesday.setBackgroundResource(R.drawable.delivery_slots_time_click)
-            Friday.setBackgroundResource(R.drawable.delivery_slots_bg)
-            Saturday.setBackgroundResource(R.drawable.delivery_slots_bg)
-            //text color
-
-            sunday.setTextColor(getResources().getColor(R.color.black))
-            monday.setTextColor(getResources().getColor(R.color.black))
-            Thursday.setTextColor(getResources().getColor(R.color.black))
-            Wednesday.setTextColor(getResources().getColor(R.color.black))
-            Tuesday.setTextColor(getResources().getColor(R.color.white))
-            Friday.setTextColor(getResources().getColor(R.color.black))
-            Saturday.setTextColor(getResources().getColor(R.color.black))
+            test(it)
         }
         Friday.setOnClickListener {
-            monday.setBackgroundResource(R.drawable.delivery_slots_bg)
-            sunday.setBackgroundResource(R.drawable.delivery_slots_bg)
-            Thursday.setBackgroundResource(R.drawable.delivery_slots_bg)
-            Wednesday.setBackgroundResource(R.drawable.delivery_slots_bg)
-            Tuesday.setBackgroundResource(R.drawable.delivery_slots_bg)
-            Friday.setBackgroundResource(R.drawable.delivery_slots_time_click)
-            Saturday.setBackgroundResource(R.drawable.delivery_slots_bg)
-
-            //text color
-
-            sunday.setTextColor(getResources().getColor(R.color.black))
-            monday.setTextColor(getResources().getColor(R.color.black))
-            Thursday.setTextColor(getResources().getColor(R.color.black))
-            Wednesday.setTextColor(getResources().getColor(R.color.black))
-            Tuesday.setTextColor(getResources().getColor(R.color.black))
-            Friday.setTextColor(getResources().getColor(R.color.white))
-            Saturday.setTextColor(getResources().getColor(R.color.black))
+            test(it)
         }
 
         Saturday.setOnClickListener {
-            monday.setBackgroundResource(R.drawable.delivery_slots_bg)
-            sunday.setBackgroundResource(R.drawable.delivery_slots_bg)
-            Thursday.setBackgroundResource(R.drawable.delivery_slots_bg)
-            Wednesday.setBackgroundResource(R.drawable.delivery_slots_bg)
-            Tuesday.setBackgroundResource(R.drawable.delivery_slots_bg)
-            Friday.setBackgroundResource(R.drawable.delivery_slots_bg)
-            Saturday.setBackgroundResource(R.drawable.delivery_slots_time_click)
-
-            //text color
-
-            sunday.setTextColor(getResources().getColor(R.color.black))
-            monday.setTextColor(getResources().getColor(R.color.black))
-            Thursday.setTextColor(getResources().getColor(R.color.black))
-            Wednesday.setTextColor(getResources().getColor(R.color.black))
-            Tuesday.setTextColor(getResources().getColor(R.color.black))
-            Friday.setTextColor(getResources().getColor(R.color.black))
-            Saturday.setTextColor(getResources().getColor(R.color.white))
+            test(it)
         }
 
 
         // past View
-
         val rv_delivery_slots_past: RecyclerView = root.findViewById(R.id.rv_delivery_slots_past)
 
 
@@ -256,12 +139,19 @@ class delivery_slots : Fragment() {
         slot_list.add(delivery_slot_model(1, "1", "12:00 PM", "12:00 AM"))
         slot_list.add(delivery_slot_model(2, "2", "12:00 PM", "12:00 AM"))
         slot_list.add(delivery_slot_model(3, "3", "12:00 PM", "12:00 AM"))
-
-        val slotAdapter: delivery_slot_adapter = delivery_slot_adapter(slot_list)
-
+        val slotAdapter = DeliverySlotAdapter(slot_list)
         rv_delivery_slots_past.layoutManager =
             LinearLayoutManager(context, LinearLayout.VERTICAL, false)
         rv_delivery_slots_past.adapter = slotAdapter
+
+        root.findViewById<AppCompatButton>(R.id.add_btn).setOnClickListener {
+            slot_list.add(delivery_slot_model(4, "3", "12:00 PM", "12:00 AM"))
+            slotAdapter.notifyDataSetChanged()
+
+        }
+
+
+
 
 
 
@@ -278,6 +168,15 @@ class delivery_slots : Fragment() {
         Tuesday.setBackgroundResource(R.drawable.delivery_slots_bg)
         Friday.setBackgroundResource(R.drawable.delivery_slots_bg)
         Saturday.setBackgroundResource(R.drawable.delivery_slots_bg)
+
+
+        sunday.setTextColor(ContextCompat.getColor(context!!, R.color.black))
+        monday.setTextColor(ContextCompat.getColor(context!!, R.color.black))
+        Thursday.setTextColor(ContextCompat.getColor(context!!, R.color.black))
+        Wednesday.setTextColor(ContextCompat.getColor(context!!, R.color.black))
+        Tuesday.setTextColor(ContextCompat.getColor(context!!, R.color.black))
+        Friday.setTextColor(ContextCompat.getColor(context!!, R.color.black))
+        Saturday.setTextColor(ContextCompat.getColor(context!!, R.color.black))
 //            Log.d("idhere", "test: "+sunday.id,)
         if (view.id == sunday.id) {
 
@@ -288,6 +187,41 @@ class delivery_slots : Fragment() {
             monday.setBackgroundResource(R.drawable.delivery_slots_time_click)
 
             monday.setTextColor(ContextCompat.getColor(context!!, R.color.white))
+
+        } else if (view.id == Thursday.id) {
+
+            Thursday.setBackgroundResource(R.drawable.delivery_slots_time_click)
+
+            Thursday.setTextColor(ContextCompat.getColor(context!!, R.color.white))
+
+
+        } else if (view.id == Wednesday.id) {
+
+            Wednesday.setBackgroundResource(R.drawable.delivery_slots_time_click)
+
+            Wednesday.setTextColor(ContextCompat.getColor(context!!, R.color.white))
+
+
+        } else if (view.id == Tuesday.id) {
+
+            Tuesday.setBackgroundResource(R.drawable.delivery_slots_time_click)
+
+            Tuesday.setTextColor(ContextCompat.getColor(context!!, R.color.white))
+
+
+        } else if (view.id == Friday.id) {
+
+            Friday.setBackgroundResource(R.drawable.delivery_slots_time_click)
+
+            Friday.setTextColor(ContextCompat.getColor(context!!, R.color.white))
+
+
+        } else if (view.id == Saturday.id) {
+
+            Saturday.setBackgroundResource(R.drawable.delivery_slots_time_click)
+
+            Saturday.setTextColor(ContextCompat.getColor(context!!, R.color.white))
+
 
         }
 

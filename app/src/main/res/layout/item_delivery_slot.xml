@@ -2,7 +2,8 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:padding="10dp"
-    android:layout_margin="10dp"
+
+
     android:layout_height="wrap_content">
 
 <TextView
@@ -73,12 +74,12 @@
             android:paddingHorizontal="10dp"
             android:paddingVertical="8dp" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/active_dot"
-            android:text="+"
+            android:src="@drawable/ipen__1"
             android:textColor="@color/white"
 
             android:textSize="25dp" />
