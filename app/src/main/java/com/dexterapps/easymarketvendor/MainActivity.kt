@@ -104,12 +104,12 @@ class MainActivity : AppCompatActivity() {
         fun loadFragment(fragment: Fragment, tag: String,id: Int = R.id.frag_host) {
             closeDrawer()
 
-            if (!tag.equals(Variables.TAG_DASHBOARD)) {
-                hideShow(tag)
-
-
-            }
-            mFragmentManager.beginTransaction().replace(R.id.frag_host, fragment)
+//            if (!tag.equals(Variables.TAG_HOME_FRAGMENT)) {
+//                hideShow(tag)
+//
+//
+//            }
+            mFragmentManager.beginTransaction().replace(id, fragment)
                 .addToBackStack(tag)
                 .commit()
 
