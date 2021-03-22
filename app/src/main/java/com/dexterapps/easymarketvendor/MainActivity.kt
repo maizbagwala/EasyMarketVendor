@@ -12,6 +12,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.dexterapps.easymarketvendor.config.Variables
+import com.dexterapps.easymarketvendor.home.HomeFragment
 import com.dexterapps.easymarketvendor.howItWorks.AboutusFragment
 import com.dexterapps.easymarketvendor.howItWorks.HowItWorksFragment
 import com.dexterapps.easymarketvendor.howItWorks.TAndCFragment
@@ -34,6 +35,8 @@ class MainActivity : AppCompatActivity() {
         drawer = findViewById(R.id.drawer_layout)
         navigationView = findViewById(R.id.nav_view)
         mFragmentManager = supportFragmentManager
+        loadFragment(HomeFragment(), Variables.TAG_HOME_FRAGMENT)
+
         initClicks()
     }
 
@@ -58,6 +61,10 @@ class MainActivity : AppCompatActivity() {
 
                 loadFragment(OfferCreation(), Variables.TAG_OFFER_CREATION)
 //                Toast.makeText(this, "order history clicked", Toast.LENGTH_SHORT).show()
+            }
+            R.id.nav_dashboard -> {
+
+                loadFragment(HomeFragment(), Variables.TAG_ORDER_HISTORY)
             }
             R.id.ll_my_profile -> {
 

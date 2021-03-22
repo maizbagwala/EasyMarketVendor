@@ -17,6 +17,8 @@ object Variables {
     const val TOKEN_TYPE = "TOKEN_TYPE"
     const val TAG_DASHBOARD = "dashboard"
     const val TAG_ORDER_HISTORY = "order_history"
+    const val TAG_HOME_FRAGMENT = "home_fragment"
+    const val TAG_VIEW_ORDER = "view_order_fragment"
     const val TAG_OFFER_CREATION = "offer_creation"
     const val TAG_MY_PROFILE = "my_profile"
     const val TAG_HOW_IT_WORKS = "how_it_works"
