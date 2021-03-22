@@ -19,5 +19,8 @@ object Variables {
     const val TAG_ORDER_HISTORY = "order_history"
     const val TAG_OFFER_CREATION = "offer_creation"
     const val TAG_MY_PROFILE = "my_profile"
+    const val TAG_HOW_IT_WORKS = "how_it_works"
+    const val TAG_ABOUTUS = "aboutus"
+    const val TAG_T_AND_C = "t_and_c"
 
 }

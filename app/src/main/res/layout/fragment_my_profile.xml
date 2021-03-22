@@ -11,8 +11,204 @@
         android:layout_height="match_parent"
         android:layout_marginTop="30dp"
         android:background="@drawable/custom_top_curved_bg"
-        android:elevation="10dp">
+        android:elevation="10dp"
+        android:orientation="vertical">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_user_profile" />
+
+        <ScrollView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/et_fname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/custom_edittext_curve"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center_vertical|top"
+                    android:hint="First Name"
+                    android:imeOptions="actionNext"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    android:paddingVertical="@dimen/dp_20"
+                    android:singleLine="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/et_lname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/custom_edittext_curve"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center_vertical|top"
+                    android:hint="Last Name"
+                    android:imeOptions="actionNext"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    android:paddingVertical="@dimen/dp_20"
+                    android:singleLine="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/et_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/custom_edittext_curve_grey"
+                    android:enabled="false"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center_vertical|top"
+                    android:hint="Mobile Number"
+                    android:imeOptions="actionNext"
+                    android:inputType="phone"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    android:paddingVertical="@dimen/dp_20"
+                    android:singleLine="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/et_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/custom_edittext_curve_grey"
+                    android:enabled="false"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center_vertical|top"
+                    android:hint="E-Mail"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    android:paddingVertical="@dimen/dp_20"
+                    android:singleLine="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:textColor="@color/black" />
+
+
+                <EditText
+                    android:id="@+id/et_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/custom_edittext_curve"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center_vertical|top"
+                    android:hint="Address"
+                    android:imeOptions="actionNext"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    android:paddingVertical="@dimen/dp_20"
+                    android:singleLine="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/et_b_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/custom_edittext_curve_grey"
+                    android:enabled="false"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center_vertical|top"
+                    android:hint="Business Category"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    android:paddingVertical="@dimen/dp_20"
+                    android:singleLine="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/et_b_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/custom_edittext_curve_grey"
+                    android:enabled="false"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center_vertical|top"
+                    android:hint="Business Name"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    android:paddingVertical="@dimen/dp_20"
+                    android:singleLine="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/et_be_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/custom_edittext_curve_grey"
+                    android:enabled="false"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center_vertical|top"
+                    android:hint="Beneficiary Name"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    android:paddingVertical="@dimen/dp_20"
+                    android:singleLine="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/et_a_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/custom_edittext_curve_grey"
+                    android:enabled="false"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center_vertical|top"
+                    android:hint="Account Details"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    android:paddingVertical="@dimen/dp_20"
+                    android:singleLine="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/btnRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginVertical="@dimen/dp_20"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/ic_c_green_rectangle"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center"
+                    android:text="Update Profile"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </ScrollView>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
