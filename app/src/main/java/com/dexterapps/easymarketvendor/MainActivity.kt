@@ -101,7 +101,7 @@ class MainActivity : AppCompatActivity() {
         lateinit var drawer: DrawerLayout
         lateinit var navigationView: NavigationView
         lateinit var mFragmentManager: FragmentManager
-        fun loadFragment(fragment: Fragment, tag: String) {
+        fun loadFragment(fragment: Fragment, tag: String,id: Int = R.id.frag_host) {
             closeDrawer()
 
             if (!tag.equals(Variables.TAG_DASHBOARD)) {
