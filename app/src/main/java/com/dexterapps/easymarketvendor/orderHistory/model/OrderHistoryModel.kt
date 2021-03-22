@@ -1,4 +1,4 @@
-package com.dexterapps.easymarket.myCart.model
+package com.dexterapps.easymarketvendor.orderHistory.model
 
 class OrderHistoryModel(
 
