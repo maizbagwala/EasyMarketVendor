@@ -1,11 +1,16 @@
 package com.dexterapps.easymarketvendor.home
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.dexterapps.easymarketvendor.R
+import com.dexterapps.easymarketvendor.home.adapter.NewOrderAdapter
+import com.dexterapps.easymarketvendor.home.model.NewOrderModel
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,9 +38,60 @@ class NewOrderTabFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_new_order_tab, container, false)
+        val view: View = inflater.inflate(R.layout.fragment_new_order_tab, container, false)
+        var tabAll: TextView
+        var tabPending: TextView
+        var tabAccepted: TextView
+
+        val rvNewOrder: RecyclerView = view.findViewById(R.id.rv_new_order)
+        val newOrderList: ArrayList<NewOrderModel> = arrayListOf()
+        rvNewOrder.layoutManager = LinearLayoutManager(context)
+        rvNewOrder.adapter = NewOrderAdapter(newOrderList)
+
+        tabAll = view.findViewById(R.id.tab_all)
+        tabPending = view.findViewById(R.id.tab_pending)
+        tabAccepted = view.findViewById(R.id.tab_accepted)
+
+        tabAll.setOnClickListener {
+
+            tabAll.setTextColor(resources.getColor(R.color.colorGreen))
+            tabPending.setTextColor(resources.getColor(R.color.white))
+            tabAccepted.setTextColor(resources.getColor(R.color.white))
+            tabAll.setBackgroundResource(R.drawable.custom_border_bg_square)
+            tabPending.setBackgroundResource(R.drawable.custom_green_bg_square)
+            tabAccepted.setBackgroundResource(R.drawable.custom_green_bg_square)
+        }
+
+        tabPending.setOnClickListener {
+            tabAll.setTextColor(resources.getColor(R.color.white))
+            tabPending.setTextColor(resources.getColor(R.color.colorGreen))
+            tabAccepted.setTextColor(resources.getColor(R.color.white))
+            tabAll.setBackgroundResource(R.drawable.custom_green_bg_square)
+            tabPending.setBackgroundResource(R.drawable.custom_border_bg_square)
+            tabAccepted.setBackgroundResource(R.drawable.custom_green_bg_square)
+        }
+
+        tabAccepted.setOnClickListener {
+            tabAll.setTextColor(resources.getColor(R.color.white))
+            tabPending.setTextColor(resources.getColor(R.color.white))
+            tabAccepted.setTextColor(resources.getColor(R.color.colorGreen))
+            tabAll.setBackgroundResource(R.drawable.custom_green_bg_square)
+            tabPending.setBackgroundResource(R.drawable.custom_green_bg_square)
+            tabAccepted.setBackgroundResource(R.drawable.custom_border_bg_square)
+        }
+
+
+
+
+
+
+
+
+
+
+        return view
     }
 
     companion object {

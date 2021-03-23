@@ -11,6 +11,7 @@
         android:padding="20dp">
 
         <ImageView
+
             android:id="@+id/nav_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -18,10 +19,29 @@
             android:src="@drawable/ic_ham" />
 
         <ImageView
+            android:id="@+id/nav_back_btn"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/ic_c_back"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/logo"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/splash_logo" />
+            android:src="@drawable/splash_logo"
+            />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:text="Name"
+            android:visibility="gone" />
 
         <ImageView
             android:id="@+id/bell_btn"
@@ -35,6 +55,5 @@
         android:id="@+id/frag_host"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
 
 </LinearLayout>

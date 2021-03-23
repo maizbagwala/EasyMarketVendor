@@ -4,11 +4,12 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
-
-import com.dexterapps.easymarketvendor.R
 import com.dexterapps.easymarketvendor.orderHistory.model.OrderHistoryModel
+import com.dexterapps.easymarketvendor.R
 
 class OrderHistoryAdapter(
     private val context: Context,
@@ -21,6 +22,13 @@ class OrderHistoryAdapter(
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        val data = dataList[position]
+
+        if (data.d_status == "Delivery Pending") {
+            holder.tv_d_status!!.setTextColor(ContextCompat.getColor(context,R.color.color7))
+        } else {
+            holder.tv_d_status!!.setTextColor(ContextCompat.getColor(context,R.color.colorGreen))
+        }
 
 
     }
@@ -31,8 +39,10 @@ class OrderHistoryAdapter(
 
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
+        var tv_d_status: TextView? = null
 
         init {
+            tv_d_status = view.findViewById(R.id.tv_d_status)
 
 
         }
