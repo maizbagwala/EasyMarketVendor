@@ -101,14 +101,14 @@ class MainActivity : AppCompatActivity() {
         lateinit var drawer: DrawerLayout
         lateinit var navigationView: NavigationView
         lateinit var mFragmentManager: FragmentManager
-        fun loadFragment(fragment: Fragment, tag: String,id: Int = R.id.frag_host) {
+        fun loadFragment(fragment: Fragment, tag: String, id: Int = R.id.frag_host) {
             closeDrawer()
 
-//            if (!tag.equals(Variables.TAG_HOME_FRAGMENT)) {
-//                hideShow(tag)
-//
-//
-//            }
+            if (!tag.equals(Variables.TAG_DASHBOARD)) {
+                hideShow(tag)
+
+
+            }
             mFragmentManager.beginTransaction().replace(id, fragment)
                 .addToBackStack(tag)
                 .commit()
@@ -162,7 +162,7 @@ class MainActivity : AppCompatActivity() {
 
         fun back() {
 
-          
+
         }
 
 
