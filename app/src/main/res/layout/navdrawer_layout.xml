@@ -85,6 +85,8 @@
 
 
             <LinearLayout
+                android:id="@+id/ll_delivery_slot"
+                android:onClick="onNavClick"
                 style="@style/nav_ll_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

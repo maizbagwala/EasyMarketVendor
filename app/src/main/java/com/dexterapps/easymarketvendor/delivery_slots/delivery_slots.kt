@@ -12,7 +12,9 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.dexterapps.easymarketvendor.MainActivity
 import com.dexterapps.easymarketvendor.R
+import com.dexterapps.easymarketvendor.config.Variables
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -37,6 +39,11 @@ class delivery_slots : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         root = inflater.inflate(R.layout.fragment_delivery_slots, container, false)
+        MainActivity.nav_back_btn.setOnClickListener {
+            MainActivity.back()
+        }
+
+        MainActivity.hideShow(Variables.NAME_DELIVERY_SLOT,true)
 
         val mTimePicker: TimePickerDialog
         val TimePicker: TimePickerDialog
@@ -136,16 +143,15 @@ class delivery_slots : Fragment() {
 
         val slot_list = ArrayList<delivery_slot_model>()
 
-        slot_list.add(delivery_slot_model(1, "1", "12:00 PM", "12:00 AM"))
-        slot_list.add(delivery_slot_model(2, "2", "12:00 PM", "12:00 AM"))
-        slot_list.add(delivery_slot_model(3, "3", "12:00 PM", "12:00 AM"))
+        slot_list.add(delivery_slot_model(1, "1", from_time.text.toString(), to_time.text.toString()))
+
         val slotAdapter = DeliverySlotAdapter(slot_list)
         rv_delivery_slots_past.layoutManager =
             LinearLayoutManager(context, LinearLayout.VERTICAL, false)
         rv_delivery_slots_past.adapter = slotAdapter
 
         root.findViewById<AppCompatButton>(R.id.add_btn).setOnClickListener {
-            slot_list.add(delivery_slot_model(4, "3", "12:00 PM", "12:00 AM"))
+            slot_list.add(delivery_slot_model(4, "3",from_time.text.toString(), to_time.text.toString()))
             slotAdapter.notifyDataSetChanged()
 
         }

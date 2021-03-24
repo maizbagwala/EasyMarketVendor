@@ -16,6 +16,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.dexterapps.easymarketvendor.config.Variables
+import com.dexterapps.easymarketvendor.delivery_slots.delivery_slots
 import com.dexterapps.easymarketvendor.home.DashboardTabFragment
 
 import com.dexterapps.easymarketvendor.home.NewOrderTabFragment
@@ -60,6 +61,12 @@ class MainActivity : AppCompatActivity() {
 
     fun onNavClick(view: View) {
         when (view.id) {
+
+            R.id.ll_delivery_slot -> {
+
+                loadFragment(delivery_slots(), Variables.TAG_DELIVERY_SLOT)
+//                Toast.makeText(this, "order history clicked", Toast.LENGTH_SHORT).show()
+            }
             R.id.ll_order_history -> {
 
                 loadFragment(OrderHistoryFragment(), Variables.TAG_ORDER_HISTORY)

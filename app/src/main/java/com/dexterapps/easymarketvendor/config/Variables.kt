@@ -26,6 +26,7 @@ object Variables {
     const val TAG_HOW_IT_WORKS = "how_it_works"
     const val TAG_ABOUTUS = "aboutus"
     const val TAG_T_AND_C = "t_and_c"
+    const val TAG_DELIVERY_SLOT = "delivery_slot"
 
 
 
@@ -42,6 +43,7 @@ object Variables {
     const val NAME_HOW_IT_WORKS = "How Its Work"
     const val NAME_ABOUTUS = "About Us"
     const val NAME_T_AND_C = "Terms And Conditions"
+    const val NAME_DELIVERY_SLOT = "Delivery Slot"
 
 
 
