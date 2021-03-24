@@ -4,11 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.dexterapps.easymarketvendor.MainActivity
 import com.dexterapps.easymarketvendor.R
+import com.dexterapps.easymarketvendor.config.Variables
 import com.dexterapps.easymarketvendor.home.adapter.NewOrderAdapter
 import com.dexterapps.easymarketvendor.home.model.NewOrderModel
 
@@ -41,11 +44,17 @@ class NewOrderTabFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         val view: View = inflater.inflate(R.layout.fragment_new_order_tab, container, false)
+
+        MainActivity.hideShow(Variables.NAME_NEW_ORDER,false)
+        MainActivity.nav_back_btn.setOnClickListener {
+            MainActivity.back()
+        }
         var tabAll: TextView
         var tabPending: TextView
         var tabAccepted: TextView
 
         val rvNewOrder: RecyclerView = view.findViewById(R.id.rv_new_order)
+        val b_tab_dashboard: LinearLayout = view.findViewById(R.id.b_tab_dashboard)
         val newOrderList: ArrayList<NewOrderModel> = arrayListOf()
         rvNewOrder.layoutManager = LinearLayoutManager(context)
         rvNewOrder.adapter = NewOrderAdapter(newOrderList)
@@ -53,6 +62,11 @@ class NewOrderTabFragment : Fragment() {
         tabAll = view.findViewById(R.id.tab_all)
         tabPending = view.findViewById(R.id.tab_pending)
         tabAccepted = view.findViewById(R.id.tab_accepted)
+        b_tab_dashboard.setOnClickListener {
+
+
+            MainActivity.loadFragment(DashboardTabFragment(), Variables.TAG_DASHBOARD)
+        }
 
         tabAll.setOnClickListener {
 

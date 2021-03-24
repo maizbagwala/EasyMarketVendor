@@ -27,4 +27,26 @@ object Variables {
     const val TAG_ABOUTUS = "aboutus"
     const val TAG_T_AND_C = "t_and_c"
 
+
+
+
+
+    const val NAME_DASHBOARD = "dashboard"
+
+    const val NAME_NEW_ORDER = "New Order"
+    const val NAME_ORDER_HISTORY = "Order History"
+
+    const val NAME_VIEW_ORDER = "View Order"
+    const val NAME_OFFER_CREATION = "Offer Creation"
+    const val NAME_MY_PROFILE = "My Profile"
+    const val NAME_HOW_IT_WORKS = "How Its Work"
+    const val NAME_ABOUTUS = "About Us"
+    const val NAME_T_AND_C = "Terms And Conditions"
+
+
+
+
+
+
+
 }
