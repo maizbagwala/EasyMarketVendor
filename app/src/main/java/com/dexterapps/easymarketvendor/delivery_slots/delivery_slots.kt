@@ -136,16 +136,15 @@ class delivery_slots : Fragment() {
 
         val slot_list = ArrayList<delivery_slot_model>()
 
-        slot_list.add(delivery_slot_model(1, "1", "12:00 PM", "12:00 AM"))
-        slot_list.add(delivery_slot_model(2, "2", "12:00 PM", "12:00 AM"))
-        slot_list.add(delivery_slot_model(3, "3", "12:00 PM", "12:00 AM"))
+        slot_list.add(delivery_slot_model(1, "1", from_time.text.toString(), to_time.text.toString()))
+
         val slotAdapter = DeliverySlotAdapter(slot_list)
         rv_delivery_slots_past.layoutManager =
             LinearLayoutManager(context, LinearLayout.VERTICAL, false)
         rv_delivery_slots_past.adapter = slotAdapter
 
         root.findViewById<AppCompatButton>(R.id.add_btn).setOnClickListener {
-            slot_list.add(delivery_slot_model(4, "3", "12:00 PM", "12:00 AM"))
+            slot_list.add(delivery_slot_model(4, "3",from_time.text.toString(), to_time.text.toString()))
             slotAdapter.notifyDataSetChanged()
 
         }
