@@ -1,18 +1,24 @@
 package com.dexterapps.easymarketvendor
 
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
+import android.view.Gravity
 import android.view.View
+import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.solver.GoalRow
+import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.dexterapps.easymarketvendor.config.Variables
-import com.dexterapps.easymarketvendor.home.HomeFragment
+import com.dexterapps.easymarketvendor.home.DashboardTabFragment
+
+import com.dexterapps.easymarketvendor.home.NewOrderTabFragment
 import com.dexterapps.easymarketvendor.howItWorks.AboutusFragment
 import com.dexterapps.easymarketvendor.howItWorks.HowItWorksFragment
 import com.dexterapps.easymarketvendor.howItWorks.TAndCFragment
@@ -20,6 +26,8 @@ import com.dexterapps.easymarketvendor.myProfile.MyProfile
 import com.dexterapps.easymarketvendor.offerCreation.OfferCreation
 import com.dexterapps.easymarketvendor.orderHistory.OrderHistoryFragment
 import com.google.android.material.navigation.NavigationView
+import com.google.android.material.snackbar.BaseTransientBottomBar
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         drawer = findViewById(R.id.drawer_layout)
         navigationView = findViewById(R.id.nav_view)
         mFragmentManager = supportFragmentManager
-        loadFragment(HomeFragment(), Variables.TAG_HOME_FRAGMENT)
+        loadFragment(DashboardTabFragment(), Variables.TAG_DASHBOARD)
 
         initClicks()
     }
@@ -64,7 +72,7 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.nav_dashboard -> {
 
-                loadFragment(HomeFragment(), Variables.TAG_ORDER_HISTORY)
+                loadFragment(DashboardTabFragment(), Variables.TAG_DASHBOARD)
             }
             R.id.ll_my_profile -> {
 
@@ -92,6 +100,37 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    private var doubleBackToExitPressedOnce = false
+
+    override fun onBackPressed() {
+
+        if (mFragmentManager.backStackEntryCount > 0) {
+            if (mFragmentManager.backStackEntryCount == 1) {
+                if (doubleBackToExitPressedOnce) {
+                    finish()
+                    return
+                }
+
+                this.doubleBackToExitPressedOnce = true
+                Snack(logo, "Please click BACK again to exit")
+                Handler().postDelayed(Runnable { doubleBackToExitPressedOnce = false }, 2000)
+
+
+            } else {
+                center_name.text = ""
+                nav_btn.visibility = View.VISIBLE
+                nav_back_btn.visibility = View.GONE
+
+                logo.visibility = View.VISIBLE
+                center_name.visibility = View.GONE
+
+                mFragmentManager.popBackStackImmediate();
+            }
+        } else {
+            super.onBackPressed();
+        }
+
+    }
 
     companion object {
         lateinit var nav_btn: ImageView
@@ -101,17 +140,30 @@ class MainActivity : AppCompatActivity() {
         lateinit var drawer: DrawerLayout
         lateinit var navigationView: NavigationView
         lateinit var mFragmentManager: FragmentManager
-        fun loadFragment(fragment: Fragment, tag: String, id: Int = R.id.frag_host) {
+
+        fun Snack(layoutView: View, msg: String) {
+            val snackBarView = Snackbar.make(layoutView, msg, Snackbar.LENGTH_LONG)
+            val view = snackBarView.view
+            val params = view.layoutParams as FrameLayout.LayoutParams
+            params.gravity = Gravity.BOTTOM
+            view.layoutParams = params
+//                view.background = ContextCompat.getDrawable(context,R.drawable.custom_drawable) // for custom background
+            snackBarView.animationMode = BaseTransientBottomBar.ANIMATION_MODE_FADE
+            snackBarView.show()
+
+        }
+
+        fun loadFragment(fragment: Fragment, tag: String) {
+
             closeDrawer()
+            val fragmentA: Fragment? = mFragmentManager.findFragmentByTag(tag)
+            if (fragmentA == null) {
 
-            if (!tag.equals(Variables.TAG_DASHBOARD)) {
-                hideShow(tag)
-
-
+                mFragmentManager.beginTransaction().replace(R.id.frag_host, fragment)
+                    .addToBackStack(tag)
+                    .commit()
             }
-            mFragmentManager.beginTransaction().replace(id, fragment)
-                .addToBackStack(tag)
-                .commit()
+
 
         }
 
@@ -121,48 +173,39 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        fun hideShow(name: String) {
-            var displayName: String? = null
+        fun hideShow(name: String, showName: Boolean) {
 
-            when (name) {
-                Variables.TAG_ORDER_HISTORY -> {
-                    displayName = "Order History"
+            if (showName) {
+                center_name.text = name
+                nav_btn.visibility = View.GONE
+                nav_back_btn.visibility = View.VISIBLE
 
-                }
+                logo.visibility = View.GONE
+                center_name.visibility = View.VISIBLE
+            } else {
+                center_name.text = ""
+                nav_btn.visibility = View.VISIBLE
+                nav_back_btn.visibility = View.GONE
 
-                Variables.TAG_MY_PROFILE -> {
-                    displayName = "My Profile"
-
-                }
-                Variables.TAG_OFFER_CREATION -> {
-                    displayName = "Offer Creation"
-
-                }
-
-                Variables.TAG_HOW_IT_WORKS -> {
-                    displayName = "How Its Work"
-
-                }
-                Variables.TAG_ABOUTUS -> {
-                    displayName = "About Us"
-
-                }
-                Variables.TAG_T_AND_C -> {
-                    displayName = "Terms And Conditions"
-
-                }
+                logo.visibility = View.VISIBLE
+                center_name.visibility = View.GONE
             }
-            center_name.text = displayName
-            nav_btn.visibility = View.GONE
-            nav_back_btn.visibility = View.VISIBLE
 
-            logo.visibility = View.GONE
-            center_name.visibility = View.VISIBLE
         }
 
         fun back() {
+            Log.d(Variables.TAG, "back: ")
 
+            if (mFragmentManager.backStackEntryCount > 0) {
+                if (mFragmentManager.backStackEntryCount == 1) {
 
+                } else {
+
+                    mFragmentManager.popBackStackImmediate();
+                }
+            } else {
+                mFragmentManager.popBackStack()
+            }
         }
 
 

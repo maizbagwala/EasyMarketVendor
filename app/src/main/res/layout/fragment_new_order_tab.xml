@@ -3,11 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingHorizontal="20dp"
+
     android:paddingTop="10dp"
     tools:context=".home.NewOrderTabFragment">
 
     <TextView
+        android:layout_marginHorizontal="20dp"
         android:id="@+id/tv_neworder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,6 +17,7 @@
         android:textSize="14sp" />
 
     <LinearLayout
+        android:layout_marginHorizontal="20dp"
         android:id="@+id/ll_tab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -61,6 +63,7 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginHorizontal="20dp"
         android:id="@+id/rv_new_order"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -69,4 +72,72 @@
         tools:itemCount="2"
         tools:listitem="@layout/item_new_order" />
 
+    <LinearLayout
+        android:id="@+id/b_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:baselineAligned="true"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:id="@+id/b_tab_dashboard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/custom_border_bg_square"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:selectableItemBackground"
+            android:gravity="center"
+            android:paddingVertical="15dp">
+
+            <ImageView
+                android:id="@+id/b_tab_dashboard_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="14dp"
+                android:src="@drawable/ic_nav_dashboard_green" />
+
+            <TextView
+                android:id="@+id/b_tab_dashboard_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dashboard"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/b_tab_order"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+
+            android:background="#94B403"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:selectableItemBackground"
+            android:gravity="center"
+            android:paddingVertical="15dp">
+
+            <ImageView
+                android:id="@+id/b_tab_order_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="14dp"
+                android:src="@drawable/ic_nav_dashboard" />
+
+            <TextView
+                android:id="@+id/b_tab_order_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Orders"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                />
+        </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>

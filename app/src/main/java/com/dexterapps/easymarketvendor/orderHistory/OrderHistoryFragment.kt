@@ -11,9 +11,11 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.dexterapps.easymarketvendor.MainActivity
 import com.dexterapps.easymarketvendor.orderHistory.adapter.OrderHistoryAdapter
 import com.dexterapps.easymarketvendor.orderHistory.model.OrderHistoryModel
 import com.dexterapps.easymarketvendor.R
+import com.dexterapps.easymarketvendor.config.Variables
 import java.util.ArrayList
 
 class OrderHistoryFragment : Fragment() {
@@ -36,6 +38,11 @@ class OrderHistoryFragment : Fragment() {
     ): View? {
 
         val root = inflater.inflate(R.layout.fragment_order_history, container, false)
+        MainActivity.nav_back_btn.setOnClickListener {
+            MainActivity.back()
+        }
+
+        MainActivity.hideShow(Variables.NAME_ORDER_HISTORY,true)
         initView(root)
         return root
     }

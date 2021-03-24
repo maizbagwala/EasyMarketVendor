@@ -8,9 +8,18 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="@dimen/dp_20"
+
+
+        android:layout_above="@+id/b_tab"
+
+
+        android:layout_alignParentEnd="true"
+
+
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginEnd="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_20"
+
         android:background="@drawable/custom_border_bg_round"
         android:drawableLeft="@drawable/ic_plus"
         android:paddingVertical="8dp"
@@ -20,8 +29,11 @@
         android:textColor="#263852" />
 
     <ScrollView
+
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/b_tab"
+        android:layout_marginBottom="50dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -381,4 +393,71 @@
 
         </RelativeLayout>
     </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/b_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:baselineAligned="true"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:id="@+id/b_tab_dashboard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#94B403"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:selectableItemBackground"
+            android:gravity="center"
+            android:paddingVertical="15dp">
+
+            <ImageView
+                android:id="@+id/b_tab_dashboard_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="14dp"
+                android:src="@drawable/ic_nav_dashboard" />
+
+            <TextView
+                android:id="@+id/b_tab_dashboard_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dashboard"
+                android:textColor="@color/white"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/b_tab_order"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/custom_border_bg_square"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:selectableItemBackground"
+            android:gravity="center"
+            android:paddingVertical="15dp">
+
+            <ImageView
+                android:id="@+id/b_tab_order_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="14dp"
+                android:src="@drawable/ic_nav_dashboard_green" />
+
+            <TextView
+                android:id="@+id/b_tab_order_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Orders"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>

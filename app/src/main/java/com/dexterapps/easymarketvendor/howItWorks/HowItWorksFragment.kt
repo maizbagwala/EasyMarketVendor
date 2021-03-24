@@ -23,9 +23,10 @@ class HowItWorksFragment : Fragment() {
         // Inflate the layout for this fragment
         root = inflater.inflate(R.layout.fragment_how_it_works, container, false)
         MainActivity.nav_back_btn.setOnClickListener {
-
+MainActivity.back()
         }
 
+        MainActivity.hideShow(Variables.NAME_HOW_IT_WORKS,true)
         return root
     }
 
