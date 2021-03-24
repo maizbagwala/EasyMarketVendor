@@ -12,7 +12,9 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.dexterapps.easymarketvendor.MainActivity
 import com.dexterapps.easymarketvendor.R
+import com.dexterapps.easymarketvendor.config.Variables
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -37,6 +39,11 @@ class delivery_slots : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         root = inflater.inflate(R.layout.fragment_delivery_slots, container, false)
+        MainActivity.nav_back_btn.setOnClickListener {
+            MainActivity.back()
+        }
+
+        MainActivity.hideShow(Variables.NAME_DELIVERY_SLOT,true)
 
         val mTimePicker: TimePickerDialog
         val TimePicker: TimePickerDialog
