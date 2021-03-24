@@ -59,6 +59,7 @@
             </LinearLayout>
 
             <LinearLayout
+
                 style="@style/nav_ll_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -80,6 +81,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Store Open" />
+
+                <Switch
+
+                    android:id="@+id/btnSwitch"
+                    android:layout_width="match_parent"
+                    android:layout_marginEnd="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:thumb="@drawable/thumb"
+                    android:track="@drawable/track"
+                    android:checked="true"
+
+                    />
 
             </LinearLayout>
 
@@ -143,6 +157,8 @@
 
 
             <LinearLayout
+                android:id="@+id/ll_delivery_status"
+                android:onClick="onNavClick"
                 style="@style/nav_ll_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

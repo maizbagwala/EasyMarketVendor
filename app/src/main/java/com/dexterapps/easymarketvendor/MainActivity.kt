@@ -16,6 +16,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.dexterapps.easymarketvendor.config.Variables
+import com.dexterapps.easymarketvendor.deliveryStatus.DeliveryStatusFragment
 import com.dexterapps.easymarketvendor.delivery_slots.delivery_slots
 import com.dexterapps.easymarketvendor.home.DashboardTabFragment
 
@@ -62,7 +63,11 @@ class MainActivity : AppCompatActivity() {
     fun onNavClick(view: View) {
         when (view.id) {
 
-            R.id.ll_delivery_slot -> {
+            R.id.ll_delivery_status -> {
+
+                loadFragment(DeliveryStatusFragment(), Variables.TAG_DELIVERY_STATUS)
+//                Toast.makeText(this, "order history clicked", Toast.LENGTH_SHORT).show()
+            }       R.id.ll_delivery_slot -> {
 
                 loadFragment(delivery_slots(), Variables.TAG_DELIVERY_SLOT)
 //                Toast.makeText(this, "order history clicked", Toast.LENGTH_SHORT).show()
@@ -124,12 +129,12 @@ class MainActivity : AppCompatActivity() {
 
 
             } else {
-                center_name.text = ""
-                nav_btn.visibility = View.VISIBLE
-                nav_back_btn.visibility = View.GONE
-
-                logo.visibility = View.VISIBLE
-                center_name.visibility = View.GONE
+//                center_name.text = ""
+//                nav_btn.visibility = View.VISIBLE
+//                nav_back_btn.visibility = View.GONE
+//
+//                logo.visibility = View.VISIBLE
+//                center_name.visibility = View.GONE
 
                 mFragmentManager.popBackStackImmediate();
             }

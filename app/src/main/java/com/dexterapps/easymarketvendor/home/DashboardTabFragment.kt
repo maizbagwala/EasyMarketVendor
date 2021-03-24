@@ -1,11 +1,13 @@
 package com.dexterapps.easymarketvendor.home
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.TextView
 import com.dexterapps.easymarketvendor.MainActivity
 import com.dexterapps.easymarketvendor.R
 import com.dexterapps.easymarketvendor.config.Variables
@@ -23,6 +25,8 @@ private const val ARG_PARAM2 = "param2"
 class DashboardTabFragment : Fragment() {
 
 
+    private var tv_add_product: TextView?=null
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,6 +34,9 @@ class DashboardTabFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_dashboard_tab, container, false)
         val tab_order: LinearLayout = view.findViewById(R.id.b_tab_order)
+         tv_add_product = view.findViewById(R.id.tv_add_product) as TextView
+
+        onClick()
 
         tab_order.setOnClickListener {
 
@@ -42,6 +49,15 @@ class DashboardTabFragment : Fragment() {
 
         MainActivity.hideShow(Variables.NAME_DASHBOARD,false)
         return view
+    }
+
+    private fun onClick() {
+        tv_add_product!!.setOnClickListener {
+            Log.d(Variables.TAG, "onCreateView: ")
+
+            MainActivity.Snack(it,"Comming soon")
+
+        }
     }
 
 }

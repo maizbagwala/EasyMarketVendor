@@ -151,7 +151,7 @@
                         android:fontFamily="@font/poppins_regular"
                         android:gravity="center_vertical"
                         android:paddingLeft="10dp"
-                        android:text="Delivery"
+                        android:text="Percentage (%)"
                         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                         android:textColor="@color/black" />
 
@@ -163,7 +163,7 @@
                         android:button="@drawable/rb_bg"
                         android:fontFamily="@font/poppins_regular"
                         android:paddingLeft="10dp"
-                        android:text="Pick Up"
+                        android:text="AUD ($)"
                         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                         android:textColor="@color/black" />
                 </RadioGroup>
