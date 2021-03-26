@@ -242,6 +242,8 @@
 
 
             <LinearLayout
+                android:id="@+id/ll_my_delivery_person"
+android:onClick="onNavClick"
                 style="@style/nav_ll_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -258,7 +260,6 @@
                     android:src="@drawable/ic_nav_delivery_person" />
 
                 <TextView
-                    android:id="@+id/nav_my_delivery_person"
                     style="@style/nav_text_item"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

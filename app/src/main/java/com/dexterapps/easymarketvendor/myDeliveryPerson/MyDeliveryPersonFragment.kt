@@ -1,16 +1,17 @@
-package com.dexterapps.easymarketvendor.home
+package com.dexterapps.easymarketvendor.myDeliveryPerson
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dexterapps.easymarketvendor.MainActivity
 import com.dexterapps.easymarketvendor.R
 import com.dexterapps.easymarketvendor.config.Variables
 import com.dexterapps.easymarketvendor.home.adapter.ViewOrderAdapter
+import com.dexterapps.easymarketvendor.myDeliveryPerson.adapter.MyDeliveryPersonAdapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -19,10 +20,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [ViewOrderFragment.newInstance] factory method to
+ * Use the [MyDeliveryPersonFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ViewOrderFragment : Fragment() {
+class MyDeliveryPersonFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -38,19 +39,18 @@ class ViewOrderFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        // Inflate the layout for this fragment
-        val view: View = inflater.inflate(R.layout.fragment_view_order, container, false)
+    ): View? {
+        val view: View = inflater.inflate(R.layout.fragment_my_delivery_person, container, false)
         MainActivity.nav_back_btn.setOnClickListener {
             MainActivity.back()
         }
 
 
-        MainActivity.hideShow(Variables.NAME_VIEW_ORDER, true)
+        MainActivity.hideShow(Variables.NAME_MY_DELIVERY_PERSON, true)
 
-        val rvViewOrder: RecyclerView = view.findViewById(R.id.rv_view_order)
-        rvViewOrder.layoutManager = LinearLayoutManager(context)
-        rvViewOrder.adapter = ViewOrderAdapter()
+        val rvMyDeliveryPerson: RecyclerView = view.findViewById(R.id.rv_my_delivery_person)
+        rvMyDeliveryPerson.layoutManager = LinearLayoutManager(context)
+        rvMyDeliveryPerson.adapter = MyDeliveryPersonAdapter()
         return view
     }
 
@@ -61,12 +61,12 @@ class ViewOrderFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment ViewOrderFragment.
+         * @return A new instance of fragment MyDeliveryPersonFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            ViewOrderFragment().apply {
+            MyDeliveryPersonFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

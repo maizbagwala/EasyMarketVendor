@@ -24,6 +24,7 @@ import com.dexterapps.easymarketvendor.home.NewOrderTabFragment
 import com.dexterapps.easymarketvendor.howItWorks.AboutusFragment
 import com.dexterapps.easymarketvendor.howItWorks.HowItWorksFragment
 import com.dexterapps.easymarketvendor.howItWorks.TAndCFragment
+import com.dexterapps.easymarketvendor.myDeliveryPerson.MyDeliveryPersonFragment
 import com.dexterapps.easymarketvendor.myProfile.MyProfile
 import com.dexterapps.easymarketvendor.offerCreation.OfferCreation
 import com.dexterapps.easymarketvendor.orderHistory.OrderHistoryFragment
@@ -63,6 +64,11 @@ class MainActivity : AppCompatActivity() {
     fun onNavClick(view: View) {
         when (view.id) {
 
+            R.id.ll_my_delivery_person -> {
+
+                loadFragment(MyDeliveryPersonFragment(), Variables.TAG_MY_DELIVERY_PERSON)
+//                Toast.makeText(this, "order history clicked", Toast.LENGTH_SHORT).show()
+            }
             R.id.ll_delivery_status -> {
 
                 loadFragment(DeliveryStatusFragment(), Variables.TAG_DELIVERY_STATUS)
