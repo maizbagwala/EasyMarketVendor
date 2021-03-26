@@ -188,6 +188,7 @@ class MainActivity : AppCompatActivity() {
         fun hideShow(name: String, showName: Boolean) {
 
             if (showName) {
+                drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
                 center_name.text = name
                 nav_btn.visibility = View.GONE
                 nav_back_btn.visibility = View.VISIBLE
@@ -195,6 +196,7 @@ class MainActivity : AppCompatActivity() {
                 logo.visibility = View.GONE
                 center_name.visibility = View.VISIBLE
             } else {
+                drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
                 center_name.text = ""
                 nav_btn.visibility = View.VISIBLE
                 nav_back_btn.visibility = View.GONE

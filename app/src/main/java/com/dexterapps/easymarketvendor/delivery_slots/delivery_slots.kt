@@ -43,7 +43,7 @@ class delivery_slots : Fragment() {
             MainActivity.back()
         }
 
-        MainActivity.hideShow(Variables.NAME_DELIVERY_SLOT,true)
+        MainActivity.hideShow(Variables.NAME_DELIVERY_SLOT, true)
 
         val mTimePicker: TimePickerDialog
         val TimePicker: TimePickerDialog
@@ -150,18 +150,28 @@ class delivery_slots : Fragment() {
             LinearLayoutManager(context, LinearLayout.VERTICAL, false)
         rv_delivery_slots_past.adapter = slotAdapter
 
-        val addBtn : AppCompatButton
+        val addBtn: AppCompatButton
 
 
-        addBtn=root.findViewById(R.id.add_btn)
+        addBtn = root.findViewById(R.id.add_btn)
 
         addBtn.setOnClickListener {
 
 
+            if (from_time.text.toString().equals("") || to_time.text.toString().equals("")) {
 
-            slot_list.add(delivery_slot_model(4, "3",from_time.text.toString(), to_time.text.toString()))
-            slotAdapter.notifyDataSetChanged()
-
+                MainActivity.Snack(root,"Fields are required")
+            } else {
+                slot_list.add(
+                    delivery_slot_model(
+                        4,
+                        "3",
+                        from_time.text.toString(),
+                        to_time.text.toString()
+                    )
+                )
+                slotAdapter.notifyDataSetChanged()
+            }
         }
 
 

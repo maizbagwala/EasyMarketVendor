@@ -160,13 +160,15 @@
                     android:textColor="@color/black" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="center"
                     android:id="@+id/add_btn"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginRight="10dp"
+                android:layout_marginStart="5dp"
+                    android:layout_marginBottom="5dp"
                     android:background="@drawable/active_dot"
                     android:text="+"
+
                     android:textColor="@color/white"
 
                     android:textSize="20sp" />
