@@ -32,7 +32,7 @@
             android:textColor="@color/colorGreen" />
 
         <TextView
-            android:id="@+id/tab_pending"
+            android:id="@+id/tab_accepted"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="8dp"
@@ -40,24 +40,24 @@
             android:background="@drawable/green_square_bg"
             android:gravity="center"
             android:paddingVertical="5dp"
-            android:text="Pending"
+            android:text="Accepted"
             android:textColor="@color/white" />
 
         <TextView
-            android:id="@+id/tab_accepted"
+            android:id="@+id/tab_cancelled"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/green_square_bg"
             android:gravity="center"
             android:paddingVertical="5dp"
-            android:text="Accepted"
+            android:text="Cancelled"
             android:textColor="@color/white" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_marginHorizontal="20dp"
-        android:id="@+id/rv_new_order"
+        android:id="@+id/rv_delivery_order_status"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/ll_tab"

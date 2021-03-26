@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,9 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dexterapps.easymarketvendor.MainActivity
 import com.dexterapps.easymarketvendor.R
 import com.dexterapps.easymarketvendor.config.Variables
-import com.dexterapps.easymarketvendor.home.DashboardTabFragment
-import com.dexterapps.easymarketvendor.home.adapter.NewOrderAdapter
-import com.dexterapps.easymarketvendor.home.model.NewOrderModel
+import com.dexterapps.easymarketvendor.home.adapter.ViewDeliveryOrderStatusAdapter
+import com.dexterapps.easymarketvendor.home.model.ViewDeliveryOrderStatusModel
 
 class DeliveryStatusFragment : Fragment() {
 
@@ -36,46 +34,52 @@ class DeliveryStatusFragment : Fragment() {
         }
 
         var tabAll: TextView
-        var tabPending: TextView
         var tabAccepted: TextView
+        var tabCancelled: TextView
 
-        val rvNewOrder: RecyclerView = view.findViewById(R.id.rv_new_order)
+        val rvDeliveryOrderStatus: RecyclerView = view.findViewById(R.id.rv_delivery_order_status)
 
-        val newOrderList: ArrayList<NewOrderModel> = arrayListOf()
-        rvNewOrder.layoutManager = LinearLayoutManager(context)
-        rvNewOrder.adapter = NewOrderAdapter(newOrderList)
+        val deliveryOrderStatusList: ArrayList<ViewDeliveryOrderStatusModel> = arrayListOf()
+        rvDeliveryOrderStatus.layoutManager = LinearLayoutManager(context)
+        rvDeliveryOrderStatus.adapter = ViewDeliveryOrderStatusAdapter(deliveryOrderStatusList)
 
         tabAll = view.findViewById(R.id.tab_all)
-        tabPending = view.findViewById(R.id.tab_pending)
         tabAccepted = view.findViewById(R.id.tab_accepted)
+        tabCancelled = view.findViewById(R.id.tab_cancelled)
+
+
 
         tabAll.setOnClickListener {
 
             tabAll.setTextColor(resources.getColor(R.color.colorGreen))
-            tabPending.setTextColor(resources.getColor(R.color.white))
+            tabCancelled.setTextColor(resources.getColor(R.color.white))
             tabAccepted.setTextColor(resources.getColor(R.color.white))
             tabAll.setBackgroundResource(R.drawable.custom_border_bg_square)
-            tabPending.setBackgroundResource(R.drawable.custom_green_bg_square)
+            tabCancelled.setBackgroundResource(R.drawable.custom_green_bg_square)
             tabAccepted.setBackgroundResource(R.drawable.custom_green_bg_square)
         }
 
-        tabPending.setOnClickListener {
+        tabCancelled.setOnClickListener {
             tabAll.setTextColor(resources.getColor(R.color.white))
-            tabPending.setTextColor(resources.getColor(R.color.colorGreen))
+            tabCancelled.setTextColor(resources.getColor(R.color.colorGreen))
             tabAccepted.setTextColor(resources.getColor(R.color.white))
             tabAll.setBackgroundResource(R.drawable.custom_green_bg_square)
-            tabPending.setBackgroundResource(R.drawable.custom_border_bg_square)
+            tabCancelled.setBackgroundResource(R.drawable.custom_border_bg_square)
             tabAccepted.setBackgroundResource(R.drawable.custom_green_bg_square)
         }
 
         tabAccepted.setOnClickListener {
             tabAll.setTextColor(resources.getColor(R.color.white))
-            tabPending.setTextColor(resources.getColor(R.color.white))
+            tabCancelled.setTextColor(resources.getColor(R.color.white))
             tabAccepted.setTextColor(resources.getColor(R.color.colorGreen))
             tabAll.setBackgroundResource(R.drawable.custom_green_bg_square)
-            tabPending.setBackgroundResource(R.drawable.custom_green_bg_square)
+            tabCancelled.setBackgroundResource(R.drawable.custom_green_bg_square)
             tabAccepted.setBackgroundResource(R.drawable.custom_border_bg_square)
         }
+
+
+
+
 
         return view
     }
