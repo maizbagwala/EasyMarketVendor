@@ -107,6 +107,7 @@
         app:layout_constraintTop_toTopOf="@+id/textView8" />
 
     <Spinner
+        android:id="@+id/sp1"
         android:layout_width="42dp"
         android:layout_height="22dp"
         android:layout_marginLeft="10dp"
@@ -115,4 +116,13 @@
         app:layout_constraintBottom_toBottomOf="@+id/editText3"
         app:layout_constraintStart_toEndOf="@+id/editText3"
         app:layout_constraintTop_toTopOf="@+id/editText3" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:layout_width="42dp"
+        android:layout_height="22dp"
+        android:buttonTint="#263852"
+        android:layout_marginLeft="@dimen/dp_10"
+        app:layout_constraintBottom_toBottomOf="@+id/sp1"
+        app:layout_constraintStart_toEndOf="@+id/sp1"
+        app:layout_constraintTop_toTopOf="@+id/sp1" />
 </androidx.constraintlayout.widget.ConstraintLayout>

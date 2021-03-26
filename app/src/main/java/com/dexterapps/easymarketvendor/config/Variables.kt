@@ -28,15 +28,13 @@ object Variables {
     const val TAG_T_AND_C = "t_and_c"
     const val TAG_DELIVERY_SLOT = "delivery_slot"
     const val TAG_DELIVERY_STATUS = "delivery_status"
-
-
-
+    const val TAG_ADD_PRODUCT = "add_product"
 
 
     const val NAME_DASHBOARD = "dashboard"
 
     const val NAME_NEW_ORDER = "New Order"
-    const val NAME_DELIVERY_STATUS= "Delivery Status"
+    const val NAME_DELIVERY_STATUS = "Delivery Status"
     const val NAME_ORDER_HISTORY = "Order History"
 
     const val NAME_VIEW_ORDER = "View Order"
@@ -46,11 +44,6 @@ object Variables {
     const val NAME_ABOUTUS = "About Us"
     const val NAME_T_AND_C = "Terms And Conditions"
     const val NAME_DELIVERY_SLOT = "Delivery Slot"
-
-
-
-
-
 
 
 }
