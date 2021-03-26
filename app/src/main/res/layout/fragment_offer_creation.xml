@@ -151,7 +151,7 @@
                         android:fontFamily="@font/poppins_regular"
                         android:gravity="center_vertical"
                         android:paddingLeft="10dp"
-                        android:text="Delivery"
+                        android:text="Percentage (%)"
                         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                         android:textColor="@color/black" />
 
@@ -163,7 +163,7 @@
                         android:button="@drawable/rb_bg"
                         android:fontFamily="@font/poppins_regular"
                         android:paddingLeft="10dp"
-                        android:text="Pick Up"
+                        android:text="AUD ($)"
                         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                         android:textColor="@color/black" />
                 </RadioGroup>
@@ -177,11 +177,34 @@
 
 
                 android:fontFamily="@font/poppins_regular"
-                android:text="Minimum order value 50$"
+                android:text="Minimum order value"
 
                 android:textColor="@color/black"
                 android:textSize="13sp" />
 
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_edit_text_border_bg"
+                android:hint="50$"
+                android:inputType="number"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:textColor="@color/colorGreen"
+                android:textColorHint="@color/colorGreen" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+
+
+                android:fontFamily="@font/poppins_regular"
+                android:text="Off upto"
+
+                android:textColor="@color/black"
+                android:textSize="13sp" />
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.dexterapps.easymarketvendor.MainActivity
 import com.dexterapps.easymarketvendor.R
+import com.dexterapps.easymarketvendor.config.Variables
 import com.dexterapps.easymarketvendor.home.adapter.ViewOrderAdapter
 
 // TODO: Rename parameter arguments, choose names that match
@@ -39,6 +41,9 @@ class ViewOrderFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         val view: View = inflater.inflate(R.layout.fragment_view_order, container, false)
+
+        MainActivity.hideShow(Variables.NAME_VIEW_ORDER,true)
+
         val rvViewOrder: RecyclerView = view.findViewById(R.id.rv_view_order)
         rvViewOrder.layoutManager = LinearLayoutManager(context)
         rvViewOrder.adapter = ViewOrderAdapter()

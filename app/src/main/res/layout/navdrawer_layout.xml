@@ -33,6 +33,8 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/nav_dashboard"
+                android:onClick="onNavClick"
                 style="@style/nav_ll_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -49,16 +51,17 @@
                     android:src="@drawable/ic_nav_dashboard" />
 
                 <TextView
-                    android:id="@+id/nav_dashboard"
+
                     style="@style/nav_text_item"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="onNavClick"
+
                     android:text="Dashboard" />
 
             </LinearLayout>
 
             <LinearLayout
+
                 style="@style/nav_ll_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -81,10 +84,25 @@
                     android:layout_height="wrap_content"
                     android:text="Store Open" />
 
+                <Switch
+
+                    android:id="@+id/btnSwitch"
+                    android:layout_width="match_parent"
+                    android:layout_marginEnd="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:thumb="@drawable/thumb"
+                    android:track="@drawable/track"
+                    android:checked="true"
+
+                    />
+
             </LinearLayout>
 
 
             <LinearLayout
+                android:id="@+id/ll_delivery_slot"
+                android:onClick="onNavClick"
                 style="@style/nav_ll_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -101,8 +119,8 @@
                     android:src="@drawable/ic_nav_delivery" />
 
                 <TextView
-                    android:id="@+id/nav_delivery_slots"
                     style="@style/nav_text_item"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="delivery slots" />
@@ -140,6 +158,8 @@
 
 
             <LinearLayout
+                android:id="@+id/ll_delivery_status"
+                android:onClick="onNavClick"
                 style="@style/nav_ll_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
