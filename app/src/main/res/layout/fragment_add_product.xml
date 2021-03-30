@@ -1,15 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingHorizontal="10dp"
     tools:context=".addproduct.AddProductFragment">
+
+    <TextView
+        android:id="@+id/txt_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Maggi - 2 Minutes Noodles"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/txt_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_1"
+        android:text="Snacks &amp; Branded Foods"
+        android:textColor="@color/colorGreen"
+        android:textSize="12sp" />
+
+    <com.jama.carouselview.CarouselView
+        android:id="@+id/carousel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_2"
+        android:layout_marginTop="8dp"
+        app:carouselOffset="center"
+        app:enableSnapping="true"
+        app:indicatorAnimationType="drop"
+        app:indicatorPadding="5"
+        app:indicatorRadius="5"
+        app:indicatorSelectedColor="@color/colorAccent"
+        app:indicatorUnselectedColor="@color/color1"
+        app:resource="@layout/image_carousel_item"
+        app:scaleOnScroll="false"
+        app:size="10"
+        app:spacing="10" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_sub_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/b_tab_add_sub"
+        android:layout_below="@id/carousel"
         tools:itemCount="5"
         tools:listitem="@layout/item_sub_category" />
 
