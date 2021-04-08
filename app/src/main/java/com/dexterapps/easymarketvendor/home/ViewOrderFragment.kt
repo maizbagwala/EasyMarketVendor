@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dexterapps.easymarketvendor.MainActivity
 import com.dexterapps.easymarketvendor.R
+import com.dexterapps.easymarketvendor.addproduct.AddProductFragment
 import com.dexterapps.easymarketvendor.config.Variables
 import com.dexterapps.easymarketvendor.home.adapter.ViewOrderAdapter
 
@@ -41,12 +43,11 @@ class ViewOrderFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         val view: View = inflater.inflate(R.layout.fragment_view_order, container, false)
-        MainActivity.nav_back_btn.setOnClickListener {
-            MainActivity.back()
-        }
-
 
         MainActivity.hideShow(Variables.NAME_VIEW_ORDER, true)
+        view.findViewById<LinearLayout>(R.id.b_tab_accept).setOnClickListener {
+            MainActivity.loadFragment(AddProductFragment(),Variables.TAG_ADD_PRODUCT)
+        }
 
         val rvViewOrder: RecyclerView = view.findViewById(R.id.rv_view_order)
         rvViewOrder.layoutManager = LinearLayoutManager(context)
