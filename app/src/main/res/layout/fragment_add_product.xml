@@ -47,6 +47,8 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/b_tab_add_sub"
         android:layout_below="@id/carousel"
+        android:layout_marginTop="-1dp"
+        android:layout_marginBottom="1dp"
         tools:itemCount="5"
         tools:listitem="@layout/item_sub_category" />
 

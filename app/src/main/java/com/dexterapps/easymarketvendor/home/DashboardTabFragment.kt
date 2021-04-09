@@ -10,6 +10,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import com.dexterapps.easymarketvendor.MainActivity
 import com.dexterapps.easymarketvendor.R
+import com.dexterapps.easymarketvendor.addproduct.AddProductFragment
 import com.dexterapps.easymarketvendor.config.Variables
 
 // TODO: Rename parameter arguments, choose names that match
@@ -55,7 +56,8 @@ class DashboardTabFragment : Fragment() {
         tv_add_product!!.setOnClickListener {
             Log.d(Variables.TAG, "onCreateView: ")
 
-            MainActivity.Snack(it,"Comming soon")
+
+            MainActivity.loadFragment(AddProductFragment() , Variables.TAG_ADD_PRODUCT)
 
         }
     }

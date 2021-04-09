@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="8dp"
             android:layout_weight="1"
-            android:background="@drawable/custom_border_bg_square"
+            android:background="@drawable/corner_view"
             android:gravity="center"
             android:paddingVertical="5dp"
             android:text="All"
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="8dp"
             android:layout_weight="1"
-            android:background="@drawable/green_square_bg"
+            android:background="@drawable/greenbg_cornner"
             android:gravity="center"
             android:paddingVertical="5dp"
             android:text="Pending"
@@ -55,7 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/green_square_bg"
+            android:background="@drawable/greenbg_cornner"
             android:gravity="center"
             android:paddingVertical="5dp"
             android:text="Accepted"
@@ -86,7 +86,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/custom_border_bg_square"
+            android:background="@drawable/custom_border_bg_square_left"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:selectableItemBackground"
@@ -105,9 +105,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Dashboard"
-                android:visibility="gone"
                 android:textColor="@color/white"
-                android:textSize="10sp" />
+                android:textSize="10sp"
+                android:visibility="gone" />
         </LinearLayout>
 
         <LinearLayout
@@ -116,7 +116,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
 
-            android:background="#94B403"
+            android:background="@drawable/custom_green_border_bg_square_right"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:selectableItemBackground"

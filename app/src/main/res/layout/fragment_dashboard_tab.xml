@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/green_square_bg"
                 android:paddingHorizontal="10dp"
-                android:paddingVertical="5dp">
+                android:paddingVertical="7dp">
 
                 <TextView
                     android:id="@+id/tv_1"
@@ -51,9 +51,12 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tv_2"
                     android:layout_alignParentRight="true"
-                    android:background="@color/white"
-                    android:paddingHorizontal="4dp"
+
+                    android:background="@drawable/dashboard_bg"
+                    android:paddingHorizontal="6dp"
+                    android:paddingVertical="3dp"
                     android:text="Share"
+
                     android:textColor="#B4D234" />
             </RelativeLayout>
 
@@ -64,6 +67,7 @@
                 android:layout_below="@id/rr_share"
                 android:layout_marginVertical="10dp"
                 android:text="DASHBOARD"
+
                 android:textColor="@color/black"
                 android:textSize="14sp" />
 
@@ -71,6 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_dashboard"
+
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -84,8 +89,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="@dimen/dp_10"
+                        android:layout_margin="5dp"
                         android:layout_weight="1"
-                        android:background="@drawable/custom_border_bg_square"
+                        android:elevation="2dp"
+                        android:background="@drawable/dashboard_bg"
                         android:orientation="vertical"
                         android:padding="@dimen/dp_10">
 
@@ -117,7 +124,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/dp_10"
                         android:layout_weight="1"
-                        android:background="@drawable/custom_border_bg_square"
+                        android:background="@drawable/dashboard_bg"
+                        android:elevation="2dp"
+                        android:layout_margin="5dp"
                         android:orientation="vertical"
                         android:padding="@dimen/dp_10">
 
@@ -155,9 +164,10 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="@dimen/dp_10"
+                       android:layout_margin="5dp"
+                        android:elevation="2dp"
                         android:layout_weight="1"
-                        android:background="@drawable/custom_border_bg_square"
+                        android:background="@drawable/dashboard_bg"
                         android:orientation="vertical"
                         android:padding="@dimen/dp_10">
 
@@ -190,7 +200,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dp_10"
                         android:layout_weight="1"
-                        android:background="@drawable/custom_border_bg_square"
+                     android:layout_margin="5dp"
+                        android:elevation="2dp"
+                        android:background="@drawable/dashboard_bg"
                         android:orientation="vertical"
                         android:padding="@dimen/dp_10">
 
@@ -230,7 +242,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="@dimen/dp_10"
                         android:layout_weight="1"
-                        android:background="@drawable/custom_border_bg_square"
+                        android:layout_margin="5dp"
+                        android:elevation="2dp"
+                        android:background="@drawable/dashboard_bg"
                         android:orientation="vertical"
                         android:padding="@dimen/dp_10">
 
@@ -263,7 +277,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dp_10"
                         android:layout_weight="1"
-                        android:background="@drawable/custom_border_bg_square"
+                        android:layout_margin="5dp"
+                        android:elevation="2dp"
+                        android:background="@drawable/dashboard_bg"
                         android:orientation="vertical"
                         android:padding="@dimen/dp_10">
 
@@ -304,7 +320,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="@dimen/dp_10"
                         android:layout_weight="1"
-                        android:background="@drawable/custom_border_bg_square"
+                        android:layout_margin="5dp"
+                        android:elevation="2dp"
+                        android:background="@drawable/dashboard_bg"
                         android:orientation="vertical"
                         android:padding="@dimen/dp_10">
 
@@ -337,7 +355,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dp_10"
                         android:layout_weight="1"
-                        android:background="@drawable/custom_border_bg_square"
+                        android:layout_margin="5dp"
+                        android:elevation="2dp"
+                        android:background="@drawable/dashboard_bg"
                         android:orientation="vertical"
                         android:padding="@dimen/dp_10">
 
@@ -405,7 +425,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#94B403"
+            android:background="@drawable/custom_green_border_bg_square_left"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:selectableItemBackground"
@@ -433,7 +453,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/custom_border_bg_square"
+            android:background="@drawable/custom_border_bg_square_right"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:selectableItemBackground"

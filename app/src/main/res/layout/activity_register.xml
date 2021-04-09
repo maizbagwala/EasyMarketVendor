@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
 
@@ -49,6 +50,13 @@
             android:gravity="center_horizontal"
             android:orientation="vertical"
             android:padding="16dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_shop" />
 
 
             <EditText
@@ -61,8 +69,8 @@
                 android:gravity="center_vertical|top"
                 android:hint="First Name"
                 android:imeOptions="actionNext"
-                android:paddingHorizontal="@dimen/dp_20"
-                android:paddingVertical="@dimen/dp_20"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="15dp"
                 android:singleLine="true"
                 android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                 android:textColor="@color/black" />
@@ -77,8 +85,8 @@
                 android:gravity="center_vertical|top"
                 android:hint="Last Name"
                 android:imeOptions="actionNext"
-                android:paddingHorizontal="@dimen/dp_20"
-                android:paddingVertical="@dimen/dp_20"
+                android:paddingHorizontal="@dimen/dp_10"
+                android:paddingVertical="15dp"
                 android:singleLine="true"
                 android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                 android:textColor="@color/black" />
@@ -94,8 +102,8 @@
                 android:hint="Mobile Number"
                 android:imeOptions="actionNext"
                 android:inputType="phone"
-                android:paddingHorizontal="@dimen/dp_20"
-                android:paddingVertical="@dimen/dp_20"
+                android:paddingHorizontal="@dimen/dp_10"
+                android:paddingVertical="15dp"
                 android:singleLine="true"
                 android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                 android:textColor="@color/black" />
@@ -111,8 +119,8 @@
                 android:hint="E-Mail"
                 android:imeOptions="actionNext"
                 android:inputType="textEmailAddress"
-                android:paddingHorizontal="@dimen/dp_20"
-                android:paddingVertical="@dimen/dp_20"
+                android:paddingHorizontal="@dimen/dp_10"
+                android:paddingVertical="15dp"
                 android:singleLine="true"
                 android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                 android:textColor="@color/black" />
@@ -127,26 +135,65 @@
                 android:gravity="center_vertical|top"
                 android:hint="Address"
                 android:imeOptions="actionNext"
-                android:paddingHorizontal="@dimen/dp_20"
-                android:paddingVertical="@dimen/dp_20"
+                android:paddingHorizontal="@dimen/dp_10"
+                android:paddingVertical="15dp"
                 android:singleLine="true"
                 android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                 android:textColor="@color/black" />
 
-            <Spinner
-                android:id="@+id/spinner_business_category"
+
+
+            <LinearLayout
+                android:id="@+id/business_category_click"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="@dimen/dp_10"
-                android:fontFamily="@font/poppins_regular"
-                android:gravity="center_vertical|top"
-                android:inputType="phone"
-                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-                android:textColor="@color/black" />
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_edittext_curve"
+
+                android:paddingHorizontal="@dimen/dp_10"
+                android:orientation="horizontal"
+                android:paddingVertical="10dp">
+
+                <TextView
+                    android:id="@+id/business_category"
+                    android:layout_width="wrap_content"
+                    android:hint="business category"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:textSize="13sp"
+                    android:fontFamily="@font/poppins_regular"
+
+                   />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/ic_drop_down"
+                    app:tint="@color/colorGrey" />
+            </LinearLayout>
+
+            <Spinner
+                android:id="@+id/sp_business_category"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:popupElevation="10dp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                style="@style/spinner_style"
+                android:layout_marginHorizontal="10dp"
+                android:popupBackground="@drawable/outline_spinner"
+                android:spinnerMode="dropdown"
+                android:visibility="invisible" />
+
 
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
                 android:orientation="horizontal">
 
                 <RadioButton
@@ -171,6 +218,7 @@
                     android:button="@drawable/rb_bg"
                     android:fontFamily="@font/poppins_regular"
                     android:paddingLeft="10dp"
+
                     android:text="Pick Up"
                     android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                     android:textColor="@color/black" />
@@ -187,8 +235,8 @@
                 android:hint="Business Name"
                 android:imeOptions="actionDone"
                 android:inputType="phone"
-                android:paddingHorizontal="@dimen/dp_20"
-                android:paddingVertical="@dimen/dp_20"
+                android:paddingHorizontal="@dimen/dp_10"
+                android:paddingVertical="15dp"
                 android:singleLine="true"
                 android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                 android:textColor="@color/black" />
@@ -204,8 +252,8 @@
                 android:hint="Beneficiary Name"
                 android:imeOptions="actionDone"
                 android:inputType="phone"
-                android:paddingHorizontal="@dimen/dp_20"
-                android:paddingVertical="@dimen/dp_20"
+                android:paddingHorizontal="@dimen/dp_10"
+                android:paddingVertical="15dp"
                 android:singleLine="true"
                 android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                 android:textColor="@color/black" />
@@ -221,8 +269,8 @@
                 android:hint="Account Details"
                 android:imeOptions="actionDone"
                 android:inputType="phone"
-                android:paddingHorizontal="@dimen/dp_20"
-                android:paddingVertical="@dimen/dp_20"
+                android:paddingHorizontal="@dimen/dp_10"
+                android:paddingVertical="15dp"
                 android:singleLine="true"
                 android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                 android:textColor="@color/black" />

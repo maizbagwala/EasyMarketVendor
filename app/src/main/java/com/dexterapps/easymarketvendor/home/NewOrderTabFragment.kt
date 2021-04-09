@@ -73,27 +73,27 @@ class NewOrderTabFragment : Fragment() {
             tabAll.setTextColor(resources.getColor(R.color.colorGreen))
             tabPending.setTextColor(resources.getColor(R.color.white))
             tabAccepted.setTextColor(resources.getColor(R.color.white))
-            tabAll.setBackgroundResource(R.drawable.custom_border_bg_square)
-            tabPending.setBackgroundResource(R.drawable.custom_green_bg_square)
-            tabAccepted.setBackgroundResource(R.drawable.custom_green_bg_square)
+            tabAll.setBackgroundResource(R.drawable.corner_view)
+            tabPending.setBackgroundResource(R.drawable.greenbg_cornner)
+            tabAccepted.setBackgroundResource(R.drawable.greenbg_cornner)
         }
 
         tabPending.setOnClickListener {
             tabAll.setTextColor(resources.getColor(R.color.white))
             tabPending.setTextColor(resources.getColor(R.color.colorGreen))
             tabAccepted.setTextColor(resources.getColor(R.color.white))
-            tabAll.setBackgroundResource(R.drawable.custom_green_bg_square)
-            tabPending.setBackgroundResource(R.drawable.custom_border_bg_square)
-            tabAccepted.setBackgroundResource(R.drawable.custom_green_bg_square)
+            tabAll.setBackgroundResource(R.drawable.greenbg_cornner)
+            tabPending.setBackgroundResource(R.drawable.corner_view)
+            tabAccepted.setBackgroundResource(R.drawable.greenbg_cornner)
         }
 
         tabAccepted.setOnClickListener {
             tabAll.setTextColor(resources.getColor(R.color.white))
             tabPending.setTextColor(resources.getColor(R.color.white))
             tabAccepted.setTextColor(resources.getColor(R.color.colorGreen))
-            tabAll.setBackgroundResource(R.drawable.custom_green_bg_square)
-            tabPending.setBackgroundResource(R.drawable.custom_green_bg_square)
-            tabAccepted.setBackgroundResource(R.drawable.custom_border_bg_square)
+            tabAll.setBackgroundResource(R.drawable.greenbg_cornner)
+            tabPending.setBackgroundResource(R.drawable.greenbg_cornner)
+            tabAccepted.setBackgroundResource(R.drawable.corner_view)
         }
 
 
