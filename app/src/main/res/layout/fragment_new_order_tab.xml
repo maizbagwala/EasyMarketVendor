@@ -128,7 +128,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="14dp"
-                android:src="@drawable/ic_nav_dashboard" />
+                android:src="@drawable/shopping_cart" />
 
             <TextView
                 android:id="@+id/b_tab_order_tv"
