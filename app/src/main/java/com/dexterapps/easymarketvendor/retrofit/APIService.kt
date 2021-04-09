@@ -1,10 +1,10 @@
 package com.dexterapps.easymarketvendor.retrofit
 
+import com.dexterapps.easymarketvendor.home.model.DashboardResponse
 import com.dexterapps.easymarketvendor.login.model.LoginResponse
+import com.dexterapps.easymarketvendor.register.model.businessCategoryModel
 import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface APIService {
 //    @GET
@@ -59,6 +59,12 @@ interface APIService {
 //        @Query("id") para1: String,
 //        @Header("Authorization") authHeader: String?
 //    ): Call<AddAddressResponse>
+
+    @GET("vendor/shopcategory")
+    fun getRegCategory(): Call<businessCategoryModel>
+
+    @GET("vendor/dashboard")
+    fun getDatabase(@Query("id") id: Int): Call<DashboardResponse>
 
     @FormUrlEncoded
     @POST("auth/login")

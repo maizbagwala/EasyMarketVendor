@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.dexterapps.easymarketvendor.login.ViewModel.LoginViewModel
 import com.dexterapps.easymarketvendor.R
-import com.dexterapps.easymarketvendor.RegisterActivity
+import com.dexterapps.easymarketvendor.register.RegisterActivity
 import com.dexterapps.easymarketvendor.verification.VerificationActivity
 import com.dexterapps.easymarketvendor.config.Loader
 import com.dexterapps.easymarketvendor.config.Utill

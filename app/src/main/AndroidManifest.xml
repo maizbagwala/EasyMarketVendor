@@ -31,7 +31,7 @@
 
         </activity>
         <activity
-            android:name=".RegisterActivity"
+            android:name=".register.RegisterActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".welcomeScreen.WelcomeScreen"
