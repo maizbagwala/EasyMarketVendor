@@ -47,9 +47,8 @@ class DeliverySlotAdapter(private val slotList: List<delivery_slot_model>) :
              val minute = mcurrentTime.get(Calendar.MINUTE)
 
              // From Time
-             mTimePicker = TimePickerDialog(context, object : TimePickerDialog.OnTimeSetListener {
-                 override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
-
+             mTimePicker = TimePickerDialog(context,
+                 { view, hourOfDay, minute ->
                      var AM_PM: String
                      if (hourOfDay < 12) {
                          AM_PM = "AM";
@@ -65,10 +64,7 @@ class DeliverySlotAdapter(private val slotList: List<delivery_slot_model>) :
                              minute
                          ) + " " + AM_PM
                      )
-
-
-                 }
-             }, hour, minute, false)
+                 }, hour, minute, false)
 
 
              mTimePicker.show()

@@ -17,6 +17,7 @@ import com.dexterapps.easymarketvendor.R
 import com.dexterapps.easymarketvendor.config.Variables
 import java.util.*
 import kotlin.collections.ArrayList
+import kotlin.math.abs
 
 class delivery_slots : Fragment() {
 
@@ -31,6 +32,7 @@ class delivery_slots : Fragment() {
     lateinit var Friday: AppCompatButton
     lateinit var Saturday: AppCompatButton
     lateinit var root: View
+    var daySelected = ""
 
     @SuppressLint("ResourceAsColor", "WrongConstant")
     override fun onCreateView(
@@ -55,22 +57,25 @@ class delivery_slots : Fragment() {
         to_time = root.findViewById(R.id.to_time)
 
         // From Time
-        mTimePicker = TimePickerDialog(context, object : TimePickerDialog.OnTimeSetListener {
-            override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
-
-                var AM_PM: String
-                if (hourOfDay < 12) {
-                    AM_PM = "AM";
+        mTimePicker = TimePickerDialog(
+            context,
+            { view, hourOfDay, minute ->
+                var myHour = hourOfDay
+                val AM_PM: String = if (hourOfDay < 12) {
+                    "AM";
                 } else {
-                    AM_PM = "PM";
+                    "PM";
+                }
+
+                if (hourOfDay > 12) {
+                    myHour = abs(hourOfDay - 12)
+
                 }
 
 
-                from_time.setText(String.format("%d : %d", hourOfDay, minute) + " " + AM_PM)
-
-
-            }
-        }, hour, minute, false)
+                from_time.text = String.format("%d : %d", myHour, minute) + " " + AM_PM
+            }, hour, minute, false
+        )
 
         from_time.setOnClickListener {
 
@@ -83,13 +88,19 @@ class delivery_slots : Fragment() {
         TimePicker = TimePickerDialog(
             context,
             { view, hourOfDay, minute ->
+                var myHour = hourOfDay
                 val AM_PM: String = if (hourOfDay < 12) {
                     "AM";
                 } else {
                     "PM";
                 }
+                if (hourOfDay > 12) {
+                    myHour = abs(hourOfDay - 12)
 
-                to_time.text = String.format("%d : %d", hourOfDay, minute) + " " + AM_PM
+                }
+
+
+                to_time.text = String.format("%d : %d", myHour, minute) + " " + AM_PM
             }, hour, minute, false
         )
 
@@ -150,17 +161,15 @@ class delivery_slots : Fragment() {
             LinearLayoutManager(context, LinearLayout.VERTICAL, false)
         rv_delivery_slots_past.adapter = slotAdapter
 
-        val addBtn: AppCompatButton
 
-
-        addBtn = root.findViewById(R.id.add_btn)
+        val addBtn: AppCompatButton = root.findViewById(R.id.add_btn)
 
         addBtn.setOnClickListener {
 
 
-            if (from_time.text.toString().equals("") || to_time.text.toString().equals("")) {
+            if (from_time.text.toString() == "" || to_time.text.toString() == "") {
 
-                MainActivity.Snack(root,"Fields are required")
+                MainActivity.Snack(root, "Fields are required")
             } else {
                 slot_list.add(
                     delivery_slot_model(
@@ -202,51 +211,61 @@ class delivery_slots : Fragment() {
         Friday.setTextColor(ContextCompat.getColor(context!!, R.color.black))
         Saturday.setTextColor(ContextCompat.getColor(context!!, R.color.black))
 //            Log.d("idhere", "test: "+sunday.id,)
-        if (view.id == sunday.id) {
+        when (view.id) {
+            sunday.id -> {
+                daySelected = "sun"
 
-            sunday.setBackgroundResource(R.drawable.delivery_slots_time_click)
-            sunday.setTextColor(ContextCompat.getColor(context!!, R.color.white))
+                sunday.setBackgroundResource(R.drawable.delivery_slots_time_click)
+                sunday.setTextColor(ContextCompat.getColor(context!!, R.color.white))
 
-        } else if (view.id == monday.id) {
-            monday.setBackgroundResource(R.drawable.delivery_slots_time_click)
+            }
+            monday.id -> {
+                daySelected = "mon"
 
-            monday.setTextColor(ContextCompat.getColor(context!!, R.color.white))
+                monday.setBackgroundResource(R.drawable.delivery_slots_time_click)
+                monday.setTextColor(ContextCompat.getColor(context!!, R.color.white))
 
-        } else if (view.id == Thursday.id) {
+            }
+            Thursday.id -> {
+                daySelected = "tue"
 
-            Thursday.setBackgroundResource(R.drawable.delivery_slots_time_click)
-
-            Thursday.setTextColor(ContextCompat.getColor(context!!, R.color.white))
-
-
-        } else if (view.id == Wednesday.id) {
-
-            Wednesday.setBackgroundResource(R.drawable.delivery_slots_time_click)
-
-            Wednesday.setTextColor(ContextCompat.getColor(context!!, R.color.white))
+                Thursday.setBackgroundResource(R.drawable.delivery_slots_time_click)
+                Thursday.setTextColor(ContextCompat.getColor(context!!, R.color.white))
 
 
-        } else if (view.id == Tuesday.id) {
+            }
+            Wednesday.id -> {
+                daySelected = "wed"
 
-            Tuesday.setBackgroundResource(R.drawable.delivery_slots_time_click)
-
-            Tuesday.setTextColor(ContextCompat.getColor(context!!, R.color.white))
-
-
-        } else if (view.id == Friday.id) {
-
-            Friday.setBackgroundResource(R.drawable.delivery_slots_time_click)
-
-            Friday.setTextColor(ContextCompat.getColor(context!!, R.color.white))
+                Wednesday.setBackgroundResource(R.drawable.delivery_slots_time_click)
+                Wednesday.setTextColor(ContextCompat.getColor(context!!, R.color.white))
 
 
-        } else if (view.id == Saturday.id) {
+            }
+            Tuesday.id -> {
+                daySelected = "thu"
 
-            Saturday.setBackgroundResource(R.drawable.delivery_slots_time_click)
+                Tuesday.setBackgroundResource(R.drawable.delivery_slots_time_click)
+                Tuesday.setTextColor(ContextCompat.getColor(context!!, R.color.white))
 
-            Saturday.setTextColor(ContextCompat.getColor(context!!, R.color.white))
+
+            }
+            Friday.id -> {
+                daySelected = "fri"
+
+                Friday.setBackgroundResource(R.drawable.delivery_slots_time_click)
+                Friday.setTextColor(ContextCompat.getColor(context!!, R.color.white))
 
 
+            }
+            Saturday.id -> {
+                daySelected = "sat"
+
+                Saturday.setBackgroundResource(R.drawable.delivery_slots_time_click)
+                Saturday.setTextColor(ContextCompat.getColor(context!!, R.color.white))
+
+
+            }
         }
 
     }

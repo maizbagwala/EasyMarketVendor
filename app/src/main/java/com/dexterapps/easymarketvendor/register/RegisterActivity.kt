@@ -16,18 +16,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.dexterapps.easymarketvendor.MainActivity
 import com.dexterapps.easymarketvendor.R
+import com.dexterapps.easymarketvendor.config.Utill
 import com.dexterapps.easymarketvendor.config.Variables
-import com.dexterapps.easymarketvendor.register.model.businessCategoryModel
 import com.dexterapps.easymarketvendor.register.viewModel.RegisterViewModel
 
 class RegisterActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
-    var context: Context? = null
     var business_category: TextView? = null
     private lateinit var categoryViewModel: RegisterViewModel
     private var category: MutableList<String>? = null
     var list = arrayListOf<String>()
 
-    private val businessCategoryArray = arrayOf("Business Category", "Shubham Hule", "Maiz Bagwala")
+    //    private val businessCategoryArray = arrayOf("Business Category", "Shubham Hule", "Maiz Bagwala")
     private lateinit var business_category_click: LinearLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,16 +36,7 @@ class RegisterActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
         business_category = findViewById(R.id.business_category)
         business_category_click = findViewById(R.id.business_category_click)
 
-
         getSpinnerData()
-
-
-
-
-
-
-
-
 
 
 
@@ -61,28 +51,15 @@ class RegisterActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
     }
 
     private fun getSpinnerData() {
-        val dialog: Dialog = Dialog(context!!).apply {
-            val wlmp: WindowManager.LayoutParams = window!!.attributes
-            wlmp.gravity = Gravity.CENTER_HORIZONTAL
-            window!!.attributes = wlmp
-            window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-            setTitle(null)
-            setCancelable(false)
-            setOnCancelListener(null)
-            val view = LayoutInflater.from(context).inflate(
-                R.layout.custom_loader, null
-            )
-            setContentView(view)
-        }
-        dialog.show()
+        Utill.showLoader(this)
         categoryViewModel.getRegCategory()?.observe(this, {
             Log.d(Variables.TAG, "getSpinnerData: $it")
             for (i in it.business_category) {
                 list.add(i.name)
             }
-            val sp_business_category: Spinner = findViewById(R.id.sp_business_category)
+            val spBusinessCategory: Spinner = findViewById(R.id.sp_business_category)
 
-            sp_business_category.onItemSelectedListener = this
+            spBusinessCategory.onItemSelectedListener = this
 
             val businessCategory: ArrayAdapter<String> = ArrayAdapter<String>(
                 applicationContext!!,
@@ -91,21 +68,21 @@ class RegisterActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
             )
 
             businessCategory.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            sp_business_category.adapter = businessCategory
+            spBusinessCategory.adapter = businessCategory
 
 
             business_category_click.setOnClickListener {
 
-                sp_business_category.performClick()
+                spBusinessCategory.performClick()
 
             }
-            sp_business_category.setSelection(0)
-            dialog.dismiss()
+            spBusinessCategory.setSelection(0)
+            Utill.cancelLoader()
         })
     }
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        business_category!!.text = businessCategoryArray[position]
+        business_category!!.text = list[position]
     }
 
     override fun onNothingSelected(parent: AdapterView<*>?) {
