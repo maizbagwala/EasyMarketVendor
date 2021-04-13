@@ -1,4 +1,4 @@
-package com.dexterapps.easymarketvendor.login.ViewModel
+package com.dexterapps.easymarketvendor.login.viewModel
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
@@ -33,7 +33,7 @@ class LoginViewModel : ViewModel() {
 
     //This method is using Retrofit to get the JSON data from URL
     private fun loadLogin() {
-        val call = RetrofitClient.getClient().Login("9724396247")
+        val call = RetrofitClient.getClient().login("9724396247")
 
         call.enqueue(object : Callback<LoginResponse> {
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {

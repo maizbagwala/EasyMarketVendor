@@ -9,7 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.dexterapps.easymarketvendor.login.ViewModel.LoginViewModel
+import com.dexterapps.easymarketvendor.login.viewModel.LoginViewModel
 import com.dexterapps.easymarketvendor.R
 import com.dexterapps.easymarketvendor.register.RegisterActivity
 import com.dexterapps.easymarketvendor.verification.VerificationActivity

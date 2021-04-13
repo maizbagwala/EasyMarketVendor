@@ -108,7 +108,8 @@ interface APIService {
         @Field("t_to") t_to: String
     ): Call<SlotResponse>
 
+
     @FormUrlEncoded
     @POST("auth/login")
-    fun Login(@Field("phone") action: String): Call<LoginResponse>
+    fun login(@Field("phone") action: String): Call<LoginResponse>
 }
