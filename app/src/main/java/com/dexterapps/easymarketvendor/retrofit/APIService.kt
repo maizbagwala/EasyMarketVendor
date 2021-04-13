@@ -1,5 +1,6 @@
 package com.dexterapps.easymarketvendor.retrofit
 
+import com.dexterapps.easymarketvendor.delivery_slots.model.SlotResponse
 import com.dexterapps.easymarketvendor.home.model.DashboardResponse
 import com.dexterapps.easymarketvendor.login.model.LoginResponse
 import com.dexterapps.easymarketvendor.offerCreation.model.OfferCreationModel
@@ -79,6 +80,33 @@ interface APIService {
 
     @GET("vendor/dashboard")
     fun getDatabase(@Query("id") id: Int): Call<DashboardResponse>
+
+    @GET("vendor/timeslot/list")
+    fun getSlot(@Query("user_id") id: Int): Call<SlotResponse>
+
+    @GET("vendor/timeslot/remove")
+    fun deleteSlot(@Query("tid") id: Int): Call<SlotResponse>
+
+    @FormUrlEncoded
+    @POST("vendor/timeslot/create")
+    fun createSlot(
+        @Field("user_id") id: Int,
+        @Field("t_date") t_date: String,
+        @Field("t_day") t_day: String,
+        @Field("t_from") t_from: String,
+        @Field("t_to") t_to: String
+    ): Call<SlotResponse>
+
+    @FormUrlEncoded
+    @POST("vendor/timeslot/update")
+    fun updateSlot(
+        @Field("user_id") id: Int,
+        @Field("tid") tid: Int,
+        @Field("t_date") t_date: String,
+        @Field("t_day") t_day: String,
+        @Field("t_from") t_from: String,
+        @Field("t_to") t_to: String
+    ): Call<SlotResponse>
 
     @FormUrlEncoded
     @POST("auth/login")

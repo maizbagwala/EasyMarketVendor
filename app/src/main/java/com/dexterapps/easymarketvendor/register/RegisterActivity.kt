@@ -13,6 +13,7 @@ import android.view.View
 import android.view.WindowManager
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.dexterapps.easymarketvendor.MainActivity
 import com.dexterapps.easymarketvendor.R
@@ -52,7 +53,7 @@ class RegisterActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
 
     private fun getSpinnerData() {
         Utill.showLoader(this)
-        categoryViewModel.getRegCategory()?.observe(this, {
+        categoryViewModel.getRegCategory()?.observe(this, Observer {
             Log.d(Variables.TAG, "getSpinnerData: $it")
             for (i in it.business_category) {
                 list.add(i.name)
