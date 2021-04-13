@@ -392,7 +392,7 @@
         </RelativeLayout>
     </ScrollView>
     <TextView
-        android:id="@+id/tv_add_product"
+        android:id="@+id/tv_product"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
@@ -402,12 +402,12 @@
         android:layout_marginEnd="@dimen/dp_20"
         android:layout_marginBottom="@dimen/dp_20"
         android:background="@drawable/custom_border_bg_round"
-        android:drawableLeft="@drawable/ic_plus"
+
         android:paddingHorizontal="40dp"
         android:paddingVertical="8dp"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
-        android:text="Add Products"
+        android:text="Products"
         android:textColor="#263852" />
 
     <LinearLayout

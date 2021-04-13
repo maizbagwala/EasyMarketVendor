@@ -64,7 +64,7 @@ class AddProductFragment : Fragment() {
             resource = R.layout.image_carousel_item
             indicatorAnimationType = IndicatorAnimationType.THIN_WORM
             carouselOffset = OffsetType.CENTER
-
+            scaleOnScroll = false
 
             setCarouselViewListener { view, position ->
 

@@ -60,7 +60,8 @@ interface APIService {
 //        @Header("Authorization") authHeader: String?
 //    ): Call<AddAddressResponse>
 
+
     @FormUrlEncoded
     @POST("auth/login")
-    fun Login(@Field("phone") action: String): Call<LoginResponse>
+    fun login(@Field("phone") action: String): Call<LoginResponse>
 }

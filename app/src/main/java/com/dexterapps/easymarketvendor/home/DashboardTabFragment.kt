@@ -8,38 +8,38 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.dexterapps.easymarketvendor.MainActivity
 import com.dexterapps.easymarketvendor.R
 import com.dexterapps.easymarketvendor.addproduct.AddProductFragment
 import com.dexterapps.easymarketvendor.config.Variables
+import com.dexterapps.easymarketvendor.home.viewModel.DashboardViewModel
+import com.dexterapps.easymarketvendor.productList.productList
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [DashboardTabFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class DashboardTabFragment : Fragment() {
 
-
-    private var tv_add_product: TextView?=null
+    lateinit var dashboardViewModel: DashboardViewModel
+    private var tvAddProduct: TextView? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        dashboardViewModel = ViewModelProvider(this).get(DashboardViewModel::class.java)
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_dashboard_tab, container, false)
-        val tab_order: LinearLayout = view.findViewById(R.id.b_tab_order)
-         tv_add_product = view.findViewById(R.id.tv_add_product) as TextView
+        val tabOrder: LinearLayout = view.findViewById(R.id.b_tab_order)
+        tvAddProduct = view.findViewById(R.id.tv_product)
+
+
 
         onClick()
 
-        tab_order.setOnClickListener {
+        setDashboardData()
+
+        tabOrder.setOnClickListener {
 
             MainActivity.loadFragment(
                 NewOrderTabFragment(),
@@ -48,16 +48,23 @@ class DashboardTabFragment : Fragment() {
 
         }
 
-        MainActivity.hideShow(Variables.NAME_DASHBOARD,false)
+        MainActivity.hideShow(Variables.NAME_DASHBOARD, false)
         return view
     }
 
+    private fun setDashboardData() {
+//        dashboardViewModel.getDashboardData().observe(viewLifecycleOwner, Observer {
+//
+//        })
+
+    }
+
     private fun onClick() {
-        tv_add_product!!.setOnClickListener {
+        tvAddProduct!!.setOnClickListener {
             Log.d(Variables.TAG, "onCreateView: ")
 
 
-            MainActivity.loadFragment(AddProductFragment() , Variables.TAG_ADD_PRODUCT)
+            MainActivity.loadFragment(productList(), "productList")
 
         }
     }

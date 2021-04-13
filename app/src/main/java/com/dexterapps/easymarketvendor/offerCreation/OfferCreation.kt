@@ -59,10 +59,10 @@ class OfferCreation : Fragment() {
      val datePickerDialog = DatePickerDialog(context!!, DatePickerDialog.OnDateSetListener
      { view, year, monthOfYear, dayOfMonth ->
 
+
          fromDate.setText(dayOfMonth.toString() + "/" + (month + 1) + "/" + year)
 
      }, year, month, day)
-
      datePickerDialog.show()
 
  }
@@ -78,8 +78,6 @@ class OfferCreation : Fragment() {
             datePickerDialog.show()
 
         }
-
-
 
         return root
     }
