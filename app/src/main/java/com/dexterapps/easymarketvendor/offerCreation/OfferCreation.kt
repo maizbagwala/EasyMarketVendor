@@ -118,7 +118,7 @@ class OfferCreation : Fragment() {
                     etMinOfferValue.text.toString(),
                     etMaxDis.text.toString()
                 )!!
-                    .observe(viewLifecycleOwner, {
+                    .observe(viewLifecycleOwner, androidx.lifecycle.Observer {
                         Utill.cancelLoader()
                         Log.d(Variables.TAG, "onCreateView: $it")
                         Toast.makeText(context, it.message, Toast.LENGTH_SHORT).show()

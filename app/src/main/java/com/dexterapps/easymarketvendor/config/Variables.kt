@@ -22,6 +22,7 @@ object Variables {
     const val TAG_HOME_FRAGMENT = "home_fragment"
     const val TAG_VIEW_ORDER = "view_order_fragment"
     const val TAG_OFFER_CREATION = "offer_creation"
+    const val TAG_SHOW_OFFER = "show_offer"
     const val TAG_MY_PROFILE = "my_profile"
     const val TAG_HOW_IT_WORKS = "how_it_works"
     const val TAG_ABOUTUS = "aboutus"
@@ -40,6 +41,7 @@ object Variables {
 
     const val NAME_VIEW_ORDER = "View Order"
     const val NAME_OFFER_CREATION = "Offer Creation"
+    const val NAME_VIEW_OFFER = "View Offer"
     const val NAME_MY_PROFILE = "My Profile"
     const val NAME_HOW_IT_WORKS = "How Its Work"
     const val NAME_ABOUTUS = "About Us"

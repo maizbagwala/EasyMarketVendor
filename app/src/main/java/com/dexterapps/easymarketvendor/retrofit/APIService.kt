@@ -4,6 +4,7 @@ import com.dexterapps.easymarketvendor.delivery_slots.model.SlotResponse
 import com.dexterapps.easymarketvendor.home.model.DashboardResponse
 import com.dexterapps.easymarketvendor.login.model.LoginResponse
 import com.dexterapps.easymarketvendor.offerCreation.model.OfferCreationModel
+import com.dexterapps.easymarketvendor.offerCreation.model.offerResponse
 import com.dexterapps.easymarketvendor.register.model.businessCategoryModel
 import retrofit2.Call
 import retrofit2.http.*
@@ -74,6 +75,14 @@ interface APIService {
         @Field("min_buy") minBuy: String,
         @Field("max_discount") maxDiscount: String
     ): Call<OfferCreationModel>
+
+    @GET("vendor/coupon/lists")
+    fun getOffer(@Query("user_id") id: Int): Call<offerResponse>
+
+
+    @GET("vendor/coupon/remove")
+    fun deleteOffer(@Query("id") id: Int): Call<offerResponse>
+
 
     @GET("vendor/shopcategory")
     fun getRegCategory(): Call<businessCategoryModel>

@@ -27,6 +27,7 @@ import com.dexterapps.easymarketvendor.howItWorks.TAndCFragment
 import com.dexterapps.easymarketvendor.myDeliveryPerson.MyDeliveryPersonFragment
 import com.dexterapps.easymarketvendor.myProfile.MyProfile
 import com.dexterapps.easymarketvendor.offerCreation.OfferCreation
+import com.dexterapps.easymarketvendor.offerCreation.ShowOfferFragment
 import com.dexterapps.easymarketvendor.orderHistory.OrderHistoryFragment
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.BaseTransientBottomBar
@@ -73,7 +74,8 @@ class MainActivity : AppCompatActivity() {
 
                 loadFragment(DeliveryStatusFragment(), Variables.TAG_DELIVERY_STATUS)
 //                Toast.makeText(this, "order history clicked", Toast.LENGTH_SHORT).show()
-            }       R.id.ll_delivery_slot -> {
+            }
+            R.id.ll_delivery_slot -> {
 
                 loadFragment(delivery_slots(), Variables.TAG_DELIVERY_SLOT)
 //                Toast.makeText(this, "order history clicked", Toast.LENGTH_SHORT).show()
@@ -85,7 +87,7 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.ll_offer_creation -> {
 
-                loadFragment(OfferCreation(), Variables.TAG_OFFER_CREATION)
+                loadFragment(ShowOfferFragment(), Variables.TAG_SHOW_OFFER)
 //                Toast.makeText(this, "order history clicked", Toast.LENGTH_SHORT).show()
             }
             R.id.nav_dashboard -> {

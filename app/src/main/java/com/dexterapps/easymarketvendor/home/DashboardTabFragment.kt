@@ -10,6 +10,7 @@ import android.view.*
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.dexterapps.easymarketvendor.MainActivity
 import com.dexterapps.easymarketvendor.R
@@ -33,7 +34,7 @@ class DashboardTabFragment : Fragment() {
 
 
     var mcontext: Context? = null
-    private var tv_add_product: TextView? = null
+    private lateinit var tv_add_product: TextView
     lateinit var dashboardViewModel: DashboardViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,7 +44,7 @@ class DashboardTabFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_dashboard_tab, container, false)
         val tab_order: LinearLayout = view.findViewById(R.id.b_tab_order)
-        tv_add_product = view.findViewById(R.id.tv_add_product) as TextView
+        tv_add_product = view.findViewById(R.id.tv_product)
         dashboardViewModel = ViewModelProvider(this).get(DashboardViewModel::class.java)
         onClick()
         getDashboardData()
@@ -79,7 +80,7 @@ class DashboardTabFragment : Fragment() {
         dialog.show()
 
 
-        dashboardViewModel.getDashboardData(57)?.observe(viewLifecycleOwner, {
+        dashboardViewModel.getDashboardData(57)?.observe(viewLifecycleOwner, Observer {
             Log.d(
                 TAG, "getDashboardData: $it"
             )
@@ -106,7 +107,7 @@ class DashboardTabFragment : Fragment() {
     }
 
     private fun onClick() {
-        tv_add_product!!.setOnClickListener {
+        tv_add_product.setOnClickListener {
             Log.d(TAG, "onCreateView: ")
 
 
