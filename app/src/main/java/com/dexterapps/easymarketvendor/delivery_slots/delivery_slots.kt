@@ -24,7 +24,6 @@ import com.dexterapps.easymarketvendor.config.Variables.TAG
 import com.dexterapps.easymarketvendor.delivery_slots.adapter.DeliverySlotAdapter
 import com.dexterapps.easymarketvendor.delivery_slots.interfaces.SlotInterface
 import com.dexterapps.easymarketvendor.delivery_slots.model.Data
-import com.dexterapps.easymarketvendor.delivery_slots.model.delivery_slot_model
 import com.dexterapps.easymarketvendor.delivery_slots.viewModel.DeliverySlotViewModel
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -183,7 +182,7 @@ class delivery_slots : Fragment() {
                             .observe(viewLifecycleOwner, androidx.lifecycle.Observer {
                                 Utill.cancelLoader()
                                 Log.d(TAG, "deleteSlot: $it")
-                                MainActivity.Snack(root, it.message)
+                                MainActivity.snack(root, it.message)
                                 getSlot()
                             })
 
@@ -202,7 +201,7 @@ class delivery_slots : Fragment() {
                                 androidx.lifecycle.Observer {
                                     Utill.cancelLoader()
                                     Log.d(TAG, "updateSlot: $it")
-                                    MainActivity.Snack(root, it.message)
+                                    MainActivity.snack(root, it.message)
                                     getSlot()
                                 })
                     }
@@ -220,7 +219,7 @@ class delivery_slots : Fragment() {
 
             if (from_time.text.toString() == "" || to_time.text.toString() == "") {
 
-                MainActivity.Snack(root, "Fields are required")
+                MainActivity.snack(root, "Fields are required")
             } else {
                 Utill.showLoader(context!!)
                 slotViewModel.createSlot(
@@ -236,7 +235,7 @@ class delivery_slots : Fragment() {
                 )!!.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
                     Utill.cancelLoader()
                     Log.d(TAG, "onCreateView: $it")
-                    MainActivity.Snack(root, it.message)
+                    MainActivity.snack(root, it.message)
                     getSlot()
                 })
             }

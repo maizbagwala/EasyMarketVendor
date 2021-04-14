@@ -19,6 +19,7 @@ import com.dexterapps.easymarketvendor.config.Variables
 import com.dexterapps.easymarketvendor.config.Variables.TAG
 import com.dexterapps.easymarketvendor.home.model.DashboardResponse
 import com.dexterapps.easymarketvendor.home.viewModel.DashboardViewModel
+import com.dexterapps.easymarketvendor.productList.productList
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -111,7 +112,7 @@ class DashboardTabFragment : Fragment() {
             Log.d(TAG, "onCreateView: ")
 
 
-            MainActivity.loadFragment(AddProductFragment(), Variables.TAG_ADD_PRODUCT)
+            MainActivity.loadFragment(productList(), Variables.TAG_PRODUCT_LIST)
 
         }
     }

@@ -133,4 +133,74 @@ class OfferCreationViewModel : ViewModel() {
         })
 
     }
+
+
+    private var updateLiveData: MutableLiveData<offerResponse>? = null
+    fun updateOffer(
+        userId: String,
+        couponsCode: String,
+        discount: String,
+        discountType: String,
+        startDate: String,
+        endDate: String,
+        couponName: String,
+        minBuy: String,
+        maxDiscount: String,
+        cid: String
+    ): MutableLiveData<offerResponse>? {
+        if (updateLiveData == null) {
+            updateLiveData = MutableLiveData()
+        }
+        loadUpdateOffer(
+            userId,
+            couponsCode,
+            discount,
+            discountType,
+            startDate,
+            endDate,
+            couponName,
+            minBuy,
+            maxDiscount,
+            cid
+        )
+        return updateLiveData
+    }
+
+    private fun loadUpdateOffer(
+        userId: String,
+        couponsCode: String,
+        discount: String,
+        discountType: String,
+        startDate: String,
+        endDate: String,
+        couponName: String,
+        minBuy: String,
+        maxDiscount: String,
+        cid: String
+    ) {
+        val call = RetrofitClient.getClient().updateOffer(
+            userId,
+            couponsCode,
+            discount,
+            discountType,
+            startDate,
+            endDate,
+            couponName,
+            minBuy,
+            maxDiscount,
+            cid
+        )
+
+        call.enqueue(object : Callback<offerResponse> {
+            override fun onFailure(call: Call<offerResponse>, t: Throwable) {
+                Log.e(TAG, "onFailure: $t",)
+            }
+
+            override fun onResponse(call: Call<offerResponse>, response: Response<offerResponse>) {
+                Log.d(TAG, "onResponse: ${response.body()}")
+                updateLiveData!!.value = response.body()
+            }
+
+        })
+    }
 }

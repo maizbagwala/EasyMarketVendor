@@ -8,9 +8,7 @@ import android.view.View
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
@@ -20,13 +18,11 @@ import com.dexterapps.easymarketvendor.deliveryStatus.DeliveryStatusFragment
 import com.dexterapps.easymarketvendor.delivery_slots.delivery_slots
 import com.dexterapps.easymarketvendor.home.DashboardTabFragment
 
-import com.dexterapps.easymarketvendor.home.NewOrderTabFragment
 import com.dexterapps.easymarketvendor.howItWorks.AboutusFragment
 import com.dexterapps.easymarketvendor.howItWorks.HowItWorksFragment
 import com.dexterapps.easymarketvendor.howItWorks.TAndCFragment
 import com.dexterapps.easymarketvendor.myDeliveryPerson.MyDeliveryPersonFragment
 import com.dexterapps.easymarketvendor.myProfile.MyProfile
-import com.dexterapps.easymarketvendor.offerCreation.OfferCreation
 import com.dexterapps.easymarketvendor.offerCreation.ShowOfferFragment
 import com.dexterapps.easymarketvendor.orderHistory.OrderHistoryFragment
 import com.google.android.material.navigation.NavigationView
@@ -54,8 +50,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun initClicks() {
         nav_btn.setOnClickListener() {
-            if (!drawer!!.isDrawerOpen(GravityCompat.START)) {
-                drawer!!.openDrawer(GravityCompat.START)
+            if (!drawer.isDrawerOpen(GravityCompat.START)) {
+                drawer.openDrawer(GravityCompat.START)
             }
 
 
@@ -132,8 +128,8 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 this.doubleBackToExitPressedOnce = true
-                Snack(logo, "Please click BACK again to exit")
-                Handler().postDelayed(Runnable { doubleBackToExitPressedOnce = false }, 2000)
+                snack(logo, "Please click BACK again to exit")
+                Handler().postDelayed({ doubleBackToExitPressedOnce = false }, 2000)
 
 
             } else {
@@ -161,7 +157,7 @@ class MainActivity : AppCompatActivity() {
         lateinit var navigationView: NavigationView
         lateinit var mFragmentManager: FragmentManager
 
-        fun Snack(layoutView: View, msg: String) {
+        fun snack(layoutView: View, msg: String) {
             val snackBarView = Snackbar.make(layoutView, msg, Snackbar.LENGTH_LONG)
             val view = snackBarView.view
             val params = view.layoutParams as FrameLayout.LayoutParams
@@ -187,9 +183,9 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        fun closeDrawer() {
-            if (drawer!!.isDrawerOpen(GravityCompat.START)) {
-                drawer!!.closeDrawer(GravityCompat.START)
+        private fun closeDrawer() {
+            if (drawer.isDrawerOpen(GravityCompat.START)) {
+                drawer.closeDrawer(GravityCompat.START)
             }
         }
 

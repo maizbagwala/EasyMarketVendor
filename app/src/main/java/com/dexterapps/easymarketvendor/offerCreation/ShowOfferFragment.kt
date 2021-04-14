@@ -23,8 +23,8 @@ import com.dexterapps.easymarketvendor.offerCreation.viewModel.OfferCreationView
 
 
 class ShowOfferFragment : Fragment() {
-    lateinit var offerAdapter: OfferAdapter
-    var offerList = ArrayList<Data>()
+    private lateinit var offerAdapter: OfferAdapter
+    private var offerList = ArrayList<Data>()
     lateinit var offerViewModel: OfferCreationViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,9 +42,17 @@ class ShowOfferFragment : Fragment() {
                 offerViewModel.deleteOffer(id)!!.observe(viewLifecycleOwner, Observer {
                     Utill.cancelLoader()
                     Log.d(TAG, "deleteOffer: $it")
-                    MainActivity.Snack(root, it.message)
+                    MainActivity.snack(root, it.message)
                     getOffer()
                 })
+            }
+
+            override fun updateOffer(model: Data) {
+                val offerCreation = OfferCreation()
+                val bundle = Bundle()
+                bundle.putSerializable("model", model)
+                offerCreation.arguments = bundle
+                MainActivity.loadFragment(offerCreation, Variables.TAG_OFFER_CREATION)
             }
 
         })

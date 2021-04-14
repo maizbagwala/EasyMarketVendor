@@ -6,6 +6,7 @@ import com.dexterapps.easymarketvendor.login.model.LoginResponse
 import com.dexterapps.easymarketvendor.offerCreation.model.OfferCreationModel
 import com.dexterapps.easymarketvendor.offerCreation.model.offerResponse
 import com.dexterapps.easymarketvendor.register.model.businessCategoryModel
+import com.dexterapps.easymarketvendor.register.model.registerResponse
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -76,6 +77,21 @@ interface APIService {
         @Field("max_discount") maxDiscount: String
     ): Call<OfferCreationModel>
 
+    @FormUrlEncoded
+    @POST("vendor/coupon/update")
+    fun updateOffer(
+        @Field("user_id") userId: String,
+        @Field("coupon_code") couponsCode: String,
+        @Field("discount") discount: String,
+        @Field("discount_type") discountType: String,
+        @Field("start_date") startDate: String,
+        @Field("end_date") endDate: String,
+        @Field("coupon_name") couponName: String,
+        @Field("min_buy") minBuy: String,
+        @Field("max_discount") maxDiscount: String,
+        @Field("cid") cid: String
+    ): Call<offerResponse>
+
     @GET("vendor/coupon/lists")
     fun getOffer(@Query("user_id") id: Int): Call<offerResponse>
 
@@ -117,6 +133,19 @@ interface APIService {
         @Field("t_to") t_to: String
     ): Call<SlotResponse>
 
+    @FormUrlEncoded
+    @POST("vendor/register")
+    fun register(
+        @Field("firstname") firstname: String,
+        @Field("lastname") lastname: String,
+        @Field("mobileno") mobileno: String,
+        @Field("email") email: String,
+        @Field("address") address: String,
+        @Field("category") category: String,
+        @Field("shop_name") shop_name: String,
+        @Field("password") password: String,
+        @Field("password_confirmation") password_confirmation: String
+    ): Call<registerResponse>
 
     @FormUrlEncoded
     @POST("auth/login")

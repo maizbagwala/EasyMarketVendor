@@ -27,16 +27,46 @@ class productList : Fragment() {
         val view: View = inflater.inflate(R.layout.fragment_product_list, container, false)
 
 
-    val rvProduct : RecyclerView = view.findViewById(R.id.rv_productList)
+        val rvProduct: RecyclerView = view.findViewById(R.id.rv_productList)
 
         val productList = ArrayList<ProductListModel>()
 
-productList.add(ProductListModel(1,"https://images-na.ssl-images-amazon.com/images/I/81JI5O0qB5L._SX569_.jpg","maggi"))
-productList.add(ProductListModel(1,"https://images-na.ssl-images-amazon.com/images/I/81JI5O0qB5L._SX569_.jpg","maggi"))
-productList.add(ProductListModel(1,"https://images-na.ssl-images-amazon.com/images/I/81JI5O0qB5L._SX569_.jpg","maggi"))
-productList.add(ProductListModel(1,"https://images-na.ssl-images-amazon.com/images/I/81JI5O0qB5L._SX569_.jpg","maggi"))
-productList.add(ProductListModel(1,"https://images-na.ssl-images-amazon.com/images/I/81JI5O0qB5L._SX569_.jpg","maggi"))
-val productAdapter = productListAdapter(productList)
+        productList.add(
+            ProductListModel(
+                1,
+                "https://images-na.ssl-images-amazon.com/images/I/81JI5O0qB5L._SX569_.jpg",
+                "maggi"
+            )
+        )
+        productList.add(
+            ProductListModel(
+                1,
+                "https://images-na.ssl-images-amazon.com/images/I/81JI5O0qB5L._SX569_.jpg",
+                "maggi"
+            )
+        )
+        productList.add(
+            ProductListModel(
+                1,
+                "https://images-na.ssl-images-amazon.com/images/I/81JI5O0qB5L._SX569_.jpg",
+                "maggi"
+            )
+        )
+        productList.add(
+            ProductListModel(
+                1,
+                "https://images-na.ssl-images-amazon.com/images/I/81JI5O0qB5L._SX569_.jpg",
+                "maggi"
+            )
+        )
+        productList.add(
+            ProductListModel(
+                1,
+                "https://images-na.ssl-images-amazon.com/images/I/81JI5O0qB5L._SX569_.jpg",
+                "maggi"
+            )
+        )
+        val productAdapter = productListAdapter(productList)
 
         rvProduct.layoutManager = LinearLayoutManager(context)
         rvProduct.adapter = productAdapter
@@ -57,7 +87,7 @@ val productAdapter = productListAdapter(productList)
         }
 
 
-      return view
+        return view
     }
 
 }

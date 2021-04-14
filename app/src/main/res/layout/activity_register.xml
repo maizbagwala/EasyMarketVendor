@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
 
@@ -50,6 +50,7 @@
             android:gravity="center_horizontal"
             android:orientation="vertical"
             android:padding="16dp">
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -142,7 +143,6 @@
                 android:textColor="@color/black" />
 
 
-
             <LinearLayout
                 android:id="@+id/business_category_click"
                 android:layout_width="match_parent"
@@ -151,21 +151,21 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/custom_edittext_curve"
 
-                android:paddingHorizontal="@dimen/dp_10"
                 android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/dp_10"
                 android:paddingVertical="10dp">
 
                 <TextView
                     android:id="@+id/business_category"
                     android:layout_width="wrap_content"
-                    android:hint="business category"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
-                    android:textSize="13sp"
                     android:fontFamily="@font/poppins_regular"
+                    android:hint="business category"
+                    android:textSize="13sp"
 
-                   />
+                    />
 
                 <ImageView
                     android:layout_width="30dp"
@@ -178,15 +178,15 @@
 
             <Spinner
                 android:id="@+id/sp_business_category"
+                style="@style/spinner_style"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:popupElevation="10dp"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                style="@style/spinner_style"
                 android:layout_marginHorizontal="10dp"
                 android:popupBackground="@drawable/outline_spinner"
+                android:popupElevation="10dp"
                 android:spinnerMode="dropdown"
+                android:textAlignment="center"
+                android:textColor="@color/black"
                 android:visibility="invisible" />
 
 
@@ -234,7 +234,6 @@
                 android:gravity="center_vertical|top"
                 android:hint="Business Name"
                 android:imeOptions="actionDone"
-                android:inputType="phone"
                 android:paddingHorizontal="@dimen/dp_10"
                 android:paddingVertical="15dp"
                 android:singleLine="true"
@@ -242,16 +241,16 @@
                 android:textColor="@color/black" />
 
             <EditText
-                android:id="@+id/et_beneficiary_name"
+                android:id="@+id/et_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_10"
                 android:background="@drawable/custom_edittext_curve"
                 android:fontFamily="@font/poppins_regular"
                 android:gravity="center_vertical|top"
-                android:hint="Beneficiary Name"
+                android:hint="password"
                 android:imeOptions="actionDone"
-                android:inputType="phone"
+                android:inputType="textPassword"
                 android:paddingHorizontal="@dimen/dp_10"
                 android:paddingVertical="15dp"
                 android:singleLine="true"
@@ -259,16 +258,16 @@
                 android:textColor="@color/black" />
 
             <EditText
-                android:id="@+id/et_account_detail"
+                android:id="@+id/et_c_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_10"
                 android:background="@drawable/custom_edittext_curve"
                 android:fontFamily="@font/poppins_regular"
                 android:gravity="center_vertical|top"
-                android:hint="Account Details"
+                android:hint="confirm password"
                 android:imeOptions="actionDone"
-                android:inputType="phone"
+                android:inputType="textPassword"
                 android:paddingHorizontal="@dimen/dp_10"
                 android:paddingVertical="15dp"
                 android:singleLine="true"

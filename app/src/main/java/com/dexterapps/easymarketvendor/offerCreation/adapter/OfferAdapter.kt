@@ -3,6 +3,7 @@ package com.dexterapps.easymarketvendor.offerCreation.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.dexterapps.easymarketvendor.R
@@ -31,6 +32,10 @@ class OfferAdapter(val offerList: ArrayList<Data>, val offerInterface: OfferInte
         holder.tvDelete.setOnClickListener {
             offerInterface.deleteOffer(model.id)
         }
+
+        holder.ivEdit.setOnClickListener {
+            offerInterface.updateOffer(model)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -42,5 +47,6 @@ class OfferAdapter(val offerList: ArrayList<Data>, val offerInterface: OfferInte
         val tvCode: TextView = itemView.findViewById(R.id.tv_code)
         val tvOff: TextView = itemView.findViewById(R.id.tv_off)
         val tvDelete: TextView = itemView.findViewById(R.id.tv_delete)
+        val ivEdit: ImageView = itemView.findViewById(R.id.iv_edit)
     }
 }
