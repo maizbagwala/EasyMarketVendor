@@ -8,20 +8,20 @@
     tools:context=".home.NewOrderTabFragment">
 
     <TextView
-        android:layout_marginHorizontal="20dp"
         android:id="@+id/tv_neworder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
         android:text="NEW ORDERS"
         android:textColor="#263852"
         android:textSize="14sp" />
 
     <LinearLayout
-        android:layout_marginHorizontal="20dp"
         android:id="@+id/ll_tab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_neworder"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="20dp"
         android:orientation="horizontal"
         android:weightSum="3">
@@ -63,11 +63,12 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginHorizontal="20dp"
         android:id="@+id/rv_new_order"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/b_tab"
         android:layout_below="@id/ll_tab"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="20dp"
         tools:itemCount="2"
         tools:listitem="@layout/item_new_order" />
@@ -136,8 +137,7 @@
                 android:layout_height="wrap_content"
                 android:text="New Orders"
                 android:textColor="@color/white"
-                android:textSize="10sp"
-                />
+                android:textSize="10sp" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

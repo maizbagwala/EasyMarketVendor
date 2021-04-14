@@ -2,6 +2,7 @@ package com.dexterapps.easymarketvendor.retrofit
 
 import com.dexterapps.easymarketvendor.delivery_slots.model.SlotResponse
 import com.dexterapps.easymarketvendor.home.model.DashboardResponse
+import com.dexterapps.easymarketvendor.home.model.OrderResponse
 import com.dexterapps.easymarketvendor.login.model.LoginResponse
 import com.dexterapps.easymarketvendor.offerCreation.model.OfferCreationModel
 import com.dexterapps.easymarketvendor.offerCreation.model.offerResponse
@@ -63,6 +64,12 @@ interface APIService {
 //        @Query("id") para1: String,
 //        @Header("Authorization") authHeader: String?
 //    ): Call<AddAddressResponse>
+    @GET("vendor/order/list")
+    fun getOrder(
+        @Query("user_id") id: Int
+    ): Call<OrderResponse>
+
+
     @FormUrlEncoded
     @POST("vendor/coupon/create")
     fun createOffer(

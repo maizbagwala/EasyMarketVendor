@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.dexterapps.easymarketvendor.config.Variables
+import com.dexterapps.easymarketvendor.config.Variables.TAG
 import com.dexterapps.easymarketvendor.home.model.DashboardResponse
 import com.dexterapps.easymarketvendor.login.model.User
 import com.dexterapps.easymarketvendor.retrofit.RetrofitClient
@@ -36,7 +37,7 @@ class DashboardViewModel : ViewModel() {
             }
 
             override fun onFailure(call: Call<DashboardResponse>, t: Throwable) {
-                TODO("Not yet implemented")
+                Log.e(TAG, "onFailure: $t",)
             }
         })
 
