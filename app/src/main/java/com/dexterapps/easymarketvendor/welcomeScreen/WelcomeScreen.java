@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import com.dexterapps.easymarketvendor.RegisterActivity;
+import com.dexterapps.easymarketvendor.register.RegisterActivity;
 import com.dexterapps.easymarketvendor.R;
 import com.google.android.material.tabs.TabLayout;
 

@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
 
-        android:background="@drawable/custom_border_bg_square"
+        android:background="@drawable/custom_border_bg_square_right"
 
         app:layout_constraintTop_toTopOf="parent"
 
@@ -82,17 +82,10 @@
 
             <Spinner
                 android:layout_marginHorizontal="10dp"
-
                 android:id="@+id/sp_delivery_person"
-
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-
-
-
                 android:textAlignment="center"
-
-
                 android:textColor="@color/black"
                 android:visibility="invisible" />
 

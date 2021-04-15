@@ -29,7 +29,7 @@ object Variables {
     const val TAG_DELIVERY_SLOT = "delivery_slot"
     const val TAG_DELIVERY_STATUS = "delivery_status"
     const val TAG_ADD_PRODUCT = "add_product"
-    const val TAG_MY_DELIVERY_PERSON = "my_delivery_person"
+    const val TAG_MY_DELIVERY_PERSON = "tag_my_delivery_person"
 
 
     const val NAME_DASHBOARD = "dashboard"

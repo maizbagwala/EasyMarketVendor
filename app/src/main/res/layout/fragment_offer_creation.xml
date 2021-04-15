@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
 
-        android:background="@drawable/custom_border_bg"
+        android:background="@drawable/corner_view"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
 
@@ -38,6 +38,7 @@
                 android:textSize="13sp" />
 
             <EditText
+                android:id="@+id/et_offer_code"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -61,6 +62,7 @@
                 android:textSize="13sp" />
 
             <EditText
+                android:id="@+id/et_offer_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -71,17 +73,34 @@
                 android:textColor="@color/colorGreen"
                 android:textColorHint="@color/colorGreen" />
 
-            <TextView
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Date From"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
 
 
-                android:fontFamily="@font/poppins_regular"
-                android:text="Offer Name"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="80dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Date To"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
 
-                android:textColor="@color/black"
-                android:textSize="13sp" />
+
+            </FrameLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -89,7 +108,8 @@
                 android:orientation="horizontal"
                 android:weightSum="2">
 
-                <EditText
+                <TextView
+                    android:id="@+id/oc_date_from"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -102,7 +122,8 @@
                     android:textColor="@color/colorGreen"
                     android:textColorHint="@color/colorGreen" />
 
-                <EditText
+                <TextView
+                    android:id="@+id/oc_date_to"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -128,6 +149,19 @@
                 android:textColor="@color/black"
                 android:textSize="13sp" />
 
+            <EditText
+                android:id="@+id/et_dis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_edit_text_border_bg"
+                android:hint="discount"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:textColor="@color/colorGreen"
+                android:textColorHint="@color/colorGreen" />
+
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -136,13 +170,14 @@
                 android:weightSum="2">
 
                 <RadioGroup
+                    android:id="@+id/rb_g"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:orientation="horizontal">
 
                     <RadioButton
-                        android:id="@+id/rb_delivery"
+                        android:id="@+id/rb_percent"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -156,7 +191,7 @@
                         android:textColor="@color/black" />
 
                     <RadioButton
-                        android:id="@+id/rb_pickup"
+                        android:id="@+id/rb_amount"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -183,6 +218,7 @@
                 android:textSize="13sp" />
 
             <EditText
+                android:id="@+id/et_min_offer_value"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -201,23 +237,25 @@
 
 
                 android:fontFamily="@font/poppins_regular"
-                android:text="Off upto"
+                android:text="Maximum discount Amount"
 
                 android:textColor="@color/black"
                 android:textSize="13sp" />
+
             <EditText
+                android:id="@+id/et_max_dis"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/custom_edit_text_border_bg"
-                android:hint="10 % Off Upto 20$ "
+                android:hint="Maximum discount Amount"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
                 android:textColor="@color/colorGreen"
                 android:textColorHint="@color/colorGreen" />
 
             <TextView
-                android:id="@+id/btnRegister"
+                android:id="@+id/btnCreateOffer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

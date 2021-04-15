@@ -1,16 +1,18 @@
 package com.dexterapps.easymarketvendor.retrofit
 
+import com.dexterapps.easymarketvendor.delivery_slots.model.SlotResponse
+import com.dexterapps.easymarketvendor.home.model.DashboardResponse
 import com.dexterapps.easymarketvendor.login.model.LoginResponse
+import com.dexterapps.easymarketvendor.offerCreation.model.OfferCreationModel
+import com.dexterapps.easymarketvendor.register.model.businessCategoryModel
 import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface APIService {
 //    @GET
 //    fun getHeroes(@Url fullUrl: String?):  Call<GetAddressResponse>
 
-//    @GET("banners")
+    //    @GET("banners")
 //    fun getBanners(): Call<GetBannerData>
 //
 //
@@ -59,6 +61,52 @@ interface APIService {
 //        @Query("id") para1: String,
 //        @Header("Authorization") authHeader: String?
 //    ): Call<AddAddressResponse>
+    @FormUrlEncoded
+    @POST("vendor/coupon/create")
+    fun createOffer(
+        @Field("user_id") userId: String,
+        @Field("coupon_code") couponsCode: String,
+        @Field("discount") discount: String,
+        @Field("discount_type") discountType: String,
+        @Field("start_date") startDate: String,
+        @Field("end_date") endDate: String,
+        @Field("coupon_name") couponName: String,
+        @Field("min_buy") minBuy: String,
+        @Field("max_discount") maxDiscount: String
+    ): Call<OfferCreationModel>
+
+    @GET("vendor/shopcategory")
+    fun getRegCategory(): Call<businessCategoryModel>
+
+    @GET("vendor/dashboard")
+    fun getDatabase(@Query("id") id: Int): Call<DashboardResponse>
+
+    @GET("vendor/timeslot/list")
+    fun getSlot(@Query("user_id") id: Int): Call<SlotResponse>
+
+    @GET("vendor/timeslot/remove")
+    fun deleteSlot(@Query("tid") id: Int): Call<SlotResponse>
+
+    @FormUrlEncoded
+    @POST("vendor/timeslot/create")
+    fun createSlot(
+        @Field("user_id") id: Int,
+        @Field("t_date") t_date: String,
+        @Field("t_day") t_day: String,
+        @Field("t_from") t_from: String,
+        @Field("t_to") t_to: String
+    ): Call<SlotResponse>
+
+    @FormUrlEncoded
+    @POST("vendor/timeslot/update")
+    fun updateSlot(
+        @Field("user_id") id: Int,
+        @Field("tid") tid: Int,
+        @Field("t_date") t_date: String,
+        @Field("t_day") t_day: String,
+        @Field("t_from") t_from: String,
+        @Field("t_to") t_to: String
+    ): Call<SlotResponse>
 
     @FormUrlEncoded
     @POST("auth/login")

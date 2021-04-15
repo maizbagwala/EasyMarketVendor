@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/green_square_bg"
                 android:paddingHorizontal="10dp"
-                android:paddingVertical="5dp">
+                android:paddingVertical="7dp">
 
                 <TextView
                     android:id="@+id/tv_1"
@@ -51,9 +51,12 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tv_2"
                     android:layout_alignParentRight="true"
-                    android:background="@color/white"
-                    android:paddingHorizontal="4dp"
+
+                    android:background="@drawable/dashboard_bg"
+                    android:paddingHorizontal="6dp"
+                    android:paddingVertical="3dp"
                     android:text="Share"
+
                     android:textColor="#B4D234" />
             </RelativeLayout>
 
@@ -64,6 +67,7 @@
                 android:layout_below="@id/rr_share"
                 android:layout_marginVertical="10dp"
                 android:text="DASHBOARD"
+
                 android:textColor="@color/black"
                 android:textSize="14sp" />
 
@@ -71,6 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_dashboard"
+
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -83,9 +88,11 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
                         android:layout_marginRight="@dimen/dp_10"
                         android:layout_weight="1"
-                        android:background="@drawable/custom_border_bg_square"
+                        android:background="@drawable/dashboard_bg"
+                        android:elevation="2dp"
                         android:orientation="vertical"
                         android:padding="@dimen/dp_10">
 
@@ -98,6 +105,7 @@
                             android:textSize="10sp" />
 
                         <TextView
+                            android:id="@+id/tv_total_order"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="143"
@@ -105,6 +113,7 @@
                             android:textSize="14sp" />
 
                         <TextView
+                            android:visibility="invisible"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="+12"
@@ -115,9 +124,11 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
                         android:layout_marginStart="@dimen/dp_10"
                         android:layout_weight="1"
-                        android:background="@drawable/custom_border_bg_square"
+                        android:background="@drawable/dashboard_bg"
+                        android:elevation="2dp"
                         android:orientation="vertical"
                         android:padding="@dimen/dp_10">
 
@@ -130,6 +141,7 @@
                             android:textSize="10sp" />
 
                         <TextView
+                            android:id="@+id/tv_total_visitor"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="334"
@@ -137,6 +149,7 @@
                             android:textSize="14sp" />
 
                         <TextView
+                            android:visibility="invisible"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="+15"
@@ -155,9 +168,10 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="@dimen/dp_10"
+                        android:layout_margin="5dp"
                         android:layout_weight="1"
-                        android:background="@drawable/custom_border_bg_square"
+                        android:background="@drawable/dashboard_bg"
+                        android:elevation="2dp"
                         android:orientation="vertical"
                         android:padding="@dimen/dp_10">
 
@@ -170,6 +184,7 @@
                             android:textSize="10sp" />
 
                         <TextView
+                            android:id="@+id/tv_revenue_online"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="24,344"
@@ -177,6 +192,7 @@
                             android:textSize="14sp" />
 
                         <TextView
+                            android:visibility="invisible"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="+1500"
@@ -188,9 +204,11 @@
                         android:layout_width="match_parent"
 
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
                         android:layout_marginLeft="@dimen/dp_10"
                         android:layout_weight="1"
-                        android:background="@drawable/custom_border_bg_square"
+                        android:background="@drawable/dashboard_bg"
+                        android:elevation="2dp"
                         android:orientation="vertical"
                         android:padding="@dimen/dp_10">
 
@@ -203,6 +221,7 @@
                             android:textSize="10sp" />
 
                         <TextView
+                            android:id="@+id/tv_revenue_cash"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="2,344"
@@ -210,6 +229,7 @@
                             android:textSize="14sp" />
 
                         <TextView
+                            android:visibility="invisible"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="+600"
@@ -228,9 +248,11 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
                         android:layout_marginRight="@dimen/dp_10"
                         android:layout_weight="1"
-                        android:background="@drawable/custom_border_bg_square"
+                        android:background="@drawable/dashboard_bg"
+                        android:elevation="2dp"
                         android:orientation="vertical"
                         android:padding="@dimen/dp_10">
 
@@ -243,6 +265,7 @@
                             android:textSize="10sp" />
 
                         <TextView
+                            android:id="@+id/tv_cancel_order"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="32"
@@ -261,9 +284,11 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
                         android:layout_marginLeft="@dimen/dp_10"
                         android:layout_weight="1"
-                        android:background="@drawable/custom_border_bg_square"
+                        android:background="@drawable/dashboard_bg"
+                        android:elevation="2dp"
                         android:orientation="vertical"
                         android:padding="@dimen/dp_10">
 
@@ -302,9 +327,11 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
                         android:layout_marginRight="@dimen/dp_10"
                         android:layout_weight="1"
-                        android:background="@drawable/custom_border_bg_square"
+                        android:background="@drawable/dashboard_bg"
+                        android:elevation="2dp"
                         android:orientation="vertical"
                         android:padding="@dimen/dp_10">
 
@@ -317,6 +344,7 @@
                             android:textSize="10sp" />
 
                         <TextView
+                            android:id="@+id/tv_pending_order"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="8"
@@ -335,9 +363,11 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
                         android:layout_marginLeft="@dimen/dp_10"
                         android:layout_weight="1"
-                        android:background="@drawable/custom_border_bg_square"
+                        android:background="@drawable/dashboard_bg"
+                        android:elevation="2dp"
                         android:orientation="vertical"
                         android:padding="@dimen/dp_10">
 
@@ -350,6 +380,7 @@
                             android:textSize="10sp" />
 
                         <TextView
+                            android:id="@+id/tv_todays_pending_orders"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="4"
@@ -371,17 +402,18 @@
 
         </RelativeLayout>
     </ScrollView>
+
     <TextView
         android:id="@+id/tv_add_product"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clickable="true"
         android:layout_above="@+id/b_tab"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="@dimen/dp_20"
         android:layout_marginEnd="@dimen/dp_20"
         android:layout_marginBottom="@dimen/dp_20"
         android:background="@drawable/custom_border_bg_round"
+        android:clickable="true"
         android:drawableLeft="@drawable/ic_plus"
         android:paddingHorizontal="40dp"
         android:paddingVertical="8dp"
@@ -405,7 +437,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#94B403"
+            android:background="@drawable/custom_green_border_bg_square_left"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:selectableItemBackground"
@@ -433,7 +465,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/custom_border_bg_square"
+            android:background="@drawable/custom_border_bg_square_right"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:selectableItemBackground"

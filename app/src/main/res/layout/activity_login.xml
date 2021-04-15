@@ -77,6 +77,24 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Caption"
             android:textColor="@color/black" />
 
+
+        <EditText
+            android:id="@+id/edtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/custom_edittext_curve"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center_vertical|top"
+            android:hint="Password"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:paddingHorizontal="@dimen/dp_20"
+            android:paddingVertical="@dimen/dp_20"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:textColor="@color/black" />
+
         <TextView
             android:id="@+id/btnLogin"
             android:layout_width="@dimen/dp_190"
