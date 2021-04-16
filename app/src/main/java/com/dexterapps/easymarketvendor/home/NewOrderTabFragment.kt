@@ -28,7 +28,9 @@ class NewOrderTabFragment : Fragment() {
     val newOrderList: ArrayList<DataX> = arrayListOf()
     lateinit var newOrderAdapter: NewOrderAdapter
     lateinit var orderViewModel: OrderViewModel
-    lateinit var orderResponse: OrderResponse
+    private lateinit var orderResponse: OrderResponse
+    lateinit var pendingOrderResponse: OrderResponse
+    lateinit var acceptedOrderResponse: OrderResponse
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -70,6 +72,7 @@ class NewOrderTabFragment : Fragment() {
             tabAll.setBackgroundResource(R.drawable.corner_view)
             tabPending.setBackgroundResource(R.drawable.greenbg_cornner)
             tabAccepted.setBackgroundResource(R.drawable.greenbg_cornner)
+            getOrders(57)
         }
 
         tabPending.setOnClickListener {
@@ -79,6 +82,7 @@ class NewOrderTabFragment : Fragment() {
             tabAll.setBackgroundResource(R.drawable.greenbg_cornner)
             tabPending.setBackgroundResource(R.drawable.corner_view)
             tabAccepted.setBackgroundResource(R.drawable.greenbg_cornner)
+            getPendingOrders(57)
         }
 
         tabAccepted.setOnClickListener {
@@ -88,10 +92,39 @@ class NewOrderTabFragment : Fragment() {
             tabAll.setBackgroundResource(R.drawable.greenbg_cornner)
             tabPending.setBackgroundResource(R.drawable.greenbg_cornner)
             tabAccepted.setBackgroundResource(R.drawable.corner_view)
+            getAcceptedOrders(57)
         }
 
 
         return view
+    }
+
+    private fun getAcceptedOrders(id: Int) {
+        Utill.showLoader(context!!)
+        orderViewModel.getAcceptedOrder(id)!!.observe(viewLifecycleOwner, Observer {
+            Utill.cancelLoader()
+            Log.d(TAG, "getAcceptedOrders: $it")
+            acceptedOrderResponse = it
+            newOrderList.clear()
+            for (i in it.data) {
+                newOrderList.add(i)
+            }
+            newOrderAdapter.notifyDataSetChanged()
+        })
+    }
+
+    private fun getPendingOrders(id: Int) {
+        Utill.showLoader(context!!)
+        orderViewModel.getPendingOrder(id)!!.observe(viewLifecycleOwner, Observer {
+            Utill.cancelLoader()
+            Log.d(TAG, "getPendingOrders: $it")
+            pendingOrderResponse = it
+            newOrderList.clear()
+            for (i in it.data) {
+                newOrderList.add(i)
+            }
+            newOrderAdapter.notifyDataSetChanged()
+        })
     }
 
     private fun getOrders(id: Int) {

@@ -64,6 +64,17 @@ interface APIService {
 //        @Query("id") para1: String,
 //        @Header("Authorization") authHeader: String?
 //    ): Call<AddAddressResponse>
+    @GET("vendor/order/pendinglist")
+    fun getPendingOrder(
+        @Query("user_id") id: Int
+    ): Call<OrderResponse>
+
+    @GET("vendor/order/acceptedlist")
+    fun getAcceptedOrder(
+        @Query("user_id") id: Int
+    ): Call<OrderResponse>
+
+
     @GET("vendor/order/list")
     fun getOrder(
         @Query("user_id") id: Int
