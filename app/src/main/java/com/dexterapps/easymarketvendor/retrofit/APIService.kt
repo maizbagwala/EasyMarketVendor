@@ -3,8 +3,12 @@ package com.dexterapps.easymarketvendor.retrofit
 import com.dexterapps.easymarketvendor.delivery_slots.model.SlotResponse
 import com.dexterapps.easymarketvendor.home.model.DashboardResponse
 import com.dexterapps.easymarketvendor.login.model.LoginResponse
+import com.dexterapps.easymarketvendor.mainProduct.model.AddProductModel
+import com.dexterapps.easymarketvendor.mainProduct.model.productCategoryModel
 import com.dexterapps.easymarketvendor.offerCreation.model.OfferCreationModel
 import com.dexterapps.easymarketvendor.register.model.businessCategoryModel
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -75,8 +79,30 @@ interface APIService {
         @Field("max_discount") maxDiscount: String
     ): Call<OfferCreationModel>
 
+    @Multipart
+    @POST("vendor/addproduct")
+    fun addProduct(
+        @Part("name") name: RequestBody,
+        @Part("user_id") userId: RequestBody,
+        @Part("category_id") categoryId: RequestBody,
+        @Part  photos: List<MultipartBody.Part>,
+        @Part thumbnailImg: MultipartBody.Part,
+        @Part("unit") unit: RequestBody,
+        @Part("min_qty") minQty: RequestBody,
+        @Part("baseunit") baseUnit: RequestBody,
+        @Part("description") description: RequestBody,
+        @Part("unit_price") unitPrice: RequestBody,
+        @Part("purchase_price") purchasePrice: RequestBody,
+        @Part("discount") discount: RequestBody,
+        @Part("discount_type") discountType: RequestBody,
+        @Part("baseunitprice") baseUnitPrice: RequestBody,
+    ): Call<AddProductModel>
+
     @GET("vendor/shopcategory")
     fun getRegCategory(): Call<businessCategoryModel>
+
+    @GET("vendor/productcategory")
+    fun getProductCategory(): Call<productCategoryModel>
 
     @GET("vendor/dashboard")
     fun getDatabase(@Query("id") id: Int): Call<DashboardResponse>
