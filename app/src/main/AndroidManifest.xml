@@ -3,6 +3,10 @@
     package="com.dexterapps.easymarketvendor">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <!--  Permission to access to the External storage  -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -10,29 +14,24 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-
+        android:requestLegacyExternalStorage="true"
         android:theme="@style/Theme.EasyMarketVendor">
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
 
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="portrait">
 
-                        <intent-filter>
-                            <action android:name="android.intent.action.MAIN" />
 
-                            <category android:name="android.intent.category.LAUNCHER" />
-                        </intent-filter>
 
         </activity>
         <activity

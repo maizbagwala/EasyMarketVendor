@@ -10,6 +10,9 @@ object Variables {
     var ASSETS_URL = "http://joogadoo.com/easymarket/public/"
     var BANNER_URL = BASE_URL + "banners"
 
+
+    const val fields_required = "All fields required ..."
+
     //////////////name////////////////
     const val isLogin = "isLogin"
     const val USER_ID = "USER_ID"
@@ -22,7 +25,6 @@ object Variables {
     const val TAG_HOME_FRAGMENT = "home_fragment"
     const val TAG_VIEW_ORDER = "view_order_fragment"
     const val TAG_OFFER_CREATION = "offer_creation"
-    const val TAG_SHOW_OFFER = "show_offer"
     const val TAG_MY_PROFILE = "my_profile"
     const val TAG_HOW_IT_WORKS = "how_it_works"
     const val TAG_ABOUTUS = "aboutus"
@@ -30,8 +32,7 @@ object Variables {
     const val TAG_DELIVERY_SLOT = "delivery_slot"
     const val TAG_DELIVERY_STATUS = "delivery_status"
     const val TAG_ADD_PRODUCT = "add_product"
-    const val TAG_PRODUCT_LIST = "product_list"
-
+    const val TAG_ADD_MAIN_PRODUCT = "add_main_product"
     const val TAG_MY_DELIVERY_PERSON = "tag_my_delivery_person"
 
 
@@ -43,12 +44,12 @@ object Variables {
 
     const val NAME_VIEW_ORDER = "View Order"
     const val NAME_OFFER_CREATION = "Offer Creation"
-    const val NAME_VIEW_OFFER = "View Offer"
     const val NAME_MY_PROFILE = "My Profile"
     const val NAME_HOW_IT_WORKS = "How Its Work"
     const val NAME_ABOUTUS = "About Us"
     const val NAME_T_AND_C = "Terms And Conditions"
     const val NAME_DELIVERY_SLOT = "Delivery Slot"
+    const val NAME_ADD_MAIN_PRODUCT = "Add Main Product"
     const val NAME_MY_DELIVERY_PERSON = "My Delivery Person"
 
 
