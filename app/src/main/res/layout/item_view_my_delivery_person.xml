@@ -8,7 +8,7 @@
     android:padding="10dp">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/position_delivery_person"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -18,24 +18,24 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/iv_driver"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginLeft="20dp"
         android:src="@drawable/user"
-        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/position_delivery_person"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv_delivery_person_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:text="Akshay Gupta"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@id/imageView" />
+        app:layout_constraintBottom_toBottomOf="@+id/iv_driver"
+        app:layout_constraintStart_toEndOf="@+id/iv_driver"
+        app:layout_constraintTop_toTopOf="@id/iv_driver" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
