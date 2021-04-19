@@ -2,13 +2,12 @@ package com.dexterapps.easymarketvendor.retrofit
 
 import com.dexterapps.easymarketvendor.delivery_slots.model.SlotResponse
 import com.dexterapps.easymarketvendor.home.model.DashboardResponse
+import com.dexterapps.easymarketvendor.home.model.OrderResponse
 import com.dexterapps.easymarketvendor.login.model.LoginResponse
-import com.dexterapps.easymarketvendor.mainProduct.model.AddProductModel
-import com.dexterapps.easymarketvendor.mainProduct.model.productCategoryModel
 import com.dexterapps.easymarketvendor.offerCreation.model.OfferCreationModel
+import com.dexterapps.easymarketvendor.offerCreation.model.offerResponse
 import com.dexterapps.easymarketvendor.register.model.businessCategoryModel
-import okhttp3.MultipartBody
-import okhttp3.RequestBody
+import com.dexterapps.easymarketvendor.register.model.registerResponse
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -65,6 +64,23 @@ interface APIService {
 //        @Query("id") para1: String,
 //        @Header("Authorization") authHeader: String?
 //    ): Call<AddAddressResponse>
+    @GET("vendor/order/pendinglist")
+    fun getPendingOrder(
+        @Query("user_id") id: Int
+    ): Call<OrderResponse>
+
+    @GET("vendor/order/acceptedlist")
+    fun getAcceptedOrder(
+        @Query("user_id") id: Int
+    ): Call<OrderResponse>
+
+
+    @GET("vendor/order/list")
+    fun getOrder(
+        @Query("user_id") id: Int
+    ): Call<OrderResponse>
+
+
     @FormUrlEncoded
     @POST("vendor/coupon/create")
     fun createOffer(
@@ -79,30 +95,31 @@ interface APIService {
         @Field("max_discount") maxDiscount: String
     ): Call<OfferCreationModel>
 
-    @Multipart
-    @POST("vendor/addproduct")
-    fun addProduct(
-        @Part("name") name: RequestBody,
-        @Part("user_id") userId: RequestBody,
-        @Part("category_id") categoryId: RequestBody,
-        @Part  photos: List<MultipartBody.Part>,
-        @Part thumbnailImg: MultipartBody.Part,
-        @Part("unit") unit: RequestBody,
-        @Part("min_qty") minQty: RequestBody,
-        @Part("baseunit") baseUnit: RequestBody,
-        @Part("description") description: RequestBody,
-        @Part("unit_price") unitPrice: RequestBody,
-        @Part("purchase_price") purchasePrice: RequestBody,
-        @Part("discount") discount: RequestBody,
-        @Part("discount_type") discountType: RequestBody,
-        @Part("baseunitprice") baseUnitPrice: RequestBody,
-    ): Call<AddProductModel>
+    @FormUrlEncoded
+    @POST("vendor/coupon/update")
+    fun updateOffer(
+        @Field("user_id") userId: String,
+        @Field("coupon_code") couponsCode: String,
+        @Field("discount") discount: String,
+        @Field("discount_type") discountType: String,
+        @Field("start_date") startDate: String,
+        @Field("end_date") endDate: String,
+        @Field("coupon_name") couponName: String,
+        @Field("min_buy") minBuy: String,
+        @Field("max_discount") maxDiscount: String,
+        @Field("cid") cid: String
+    ): Call<offerResponse>
+
+    @GET("vendor/coupon/lists")
+    fun getOffer(@Query("user_id") id: Int): Call<offerResponse>
+
+
+    @GET("vendor/coupon/remove")
+    fun deleteOffer(@Query("id") id: Int): Call<offerResponse>
+
 
     @GET("vendor/shopcategory")
     fun getRegCategory(): Call<businessCategoryModel>
-
-    @GET("vendor/productcategory")
-    fun getProductCategory(): Call<productCategoryModel>
 
     @GET("vendor/dashboard")
     fun getDatabase(@Query("id") id: Int): Call<DashboardResponse>
@@ -135,6 +152,20 @@ interface APIService {
     ): Call<SlotResponse>
 
     @FormUrlEncoded
+    @POST("vendor/register")
+    fun register(
+        @Field("firstname") firstname: String,
+        @Field("lastname") lastname: String,
+        @Field("mobileno") mobileno: String,
+        @Field("email") email: String,
+        @Field("address") address: String,
+        @Field("category") category: String,
+        @Field("shop_name") shop_name: String,
+        @Field("password") password: String,
+        @Field("password_confirmation") password_confirmation: String
+    ): Call<registerResponse>
+
+    @FormUrlEncoded
     @POST("auth/login")
-    fun Login(@Field("phone") action: String): Call<LoginResponse>
+    fun login(@Field("phone") action: String): Call<LoginResponse>
 }

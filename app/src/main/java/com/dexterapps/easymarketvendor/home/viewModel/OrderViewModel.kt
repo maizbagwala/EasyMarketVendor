@@ -34,4 +34,53 @@ class OrderViewModel : ViewModel() {
 
         })
     }
+
+
+    var pendingOrderLiveData: MutableLiveData<OrderResponse>? = null
+    fun getPendingOrder(id: Int): MutableLiveData<OrderResponse>? {
+        if (pendingOrderLiveData == null) {
+            pendingOrderLiveData = MutableLiveData()
+        }
+        loadGetPendingOrder(id)
+        return pendingOrderLiveData
+    }
+
+    private fun loadGetPendingOrder(id: Int) {
+        val call = RetrofitClient.getClient().getPendingOrder(id)
+        call.enqueue(object : Callback<OrderResponse> {
+            override fun onResponse(call: Call<OrderResponse>, response: Response<OrderResponse>) {
+                Log.d(TAG, "onResponse: ${response.body()}")
+                pendingOrderLiveData!!.value = response.body()
+            }
+
+            override fun onFailure(call: Call<OrderResponse>, t: Throwable) {
+                Log.e(TAG, "onFailure: $t",)
+            }
+
+        })
+    }
+
+    var acceptedOrderLiveData: MutableLiveData<OrderResponse>? = null
+    fun getAcceptedOrder(id: Int): MutableLiveData<OrderResponse>? {
+        if (acceptedOrderLiveData == null) {
+            acceptedOrderLiveData = MutableLiveData()
+        }
+        loadGetAcceptedOrder(id)
+        return acceptedOrderLiveData
+    }
+
+    private fun loadGetAcceptedOrder(id: Int) {
+        val call = RetrofitClient.getClient().getAcceptedOrder(id)
+        call.enqueue(object : Callback<OrderResponse> {
+            override fun onResponse(call: Call<OrderResponse>, response: Response<OrderResponse>) {
+                Log.d(TAG, "onResponse: ${response.body()}")
+                acceptedOrderLiveData!!.value = response.body()
+            }
+
+            override fun onFailure(call: Call<OrderResponse>, t: Throwable) {
+                Log.e(TAG, "onFailure: $t",)
+            }
+
+        })
+    }
 }
