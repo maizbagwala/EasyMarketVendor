@@ -301,7 +301,7 @@ class AddMainProductFragment : Fragment(), AdapterView.OnItemSelectedListener {
             files.size == 0 ||
             singleFiles.equals(Uri.EMPTY)
         ) {
-            MainActivity.Snack(root, Variables.fields_required)
+            MainActivity.snack(root, Variables.fields_required)
 
         } else {
 
@@ -341,7 +341,7 @@ class AddMainProductFragment : Fragment(), AdapterView.OnItemSelectedListener {
             REQUEST_CODE_ASK_PERMISSIONS -> if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 uploadImages()
             } else {
-                MainActivity.Snack(root, "Permission denied")
+                MainActivity.snack(root, "Permission denied")
             }
             else -> super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         }
