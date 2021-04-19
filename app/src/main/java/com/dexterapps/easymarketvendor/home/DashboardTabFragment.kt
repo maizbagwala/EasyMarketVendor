@@ -19,6 +19,7 @@ import com.dexterapps.easymarketvendor.config.Variables.TAG
 import com.dexterapps.easymarketvendor.home.model.DashboardResponse
 import com.dexterapps.easymarketvendor.home.viewModel.DashboardViewModel
 import com.dexterapps.easymarketvendor.mainProduct.AddMainProductFragment
+import com.dexterapps.easymarketvendor.productList.productList
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,7 +35,7 @@ class DashboardTabFragment : Fragment() {
 
 
     var mcontext: Context? = null
-    private var tv_add_product: TextView? = null
+    private var tv_product: TextView? = null
     lateinit var dashboardViewModel: DashboardViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,7 +45,7 @@ class DashboardTabFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_dashboard_tab, container, false)
         val tab_order: LinearLayout = view.findViewById(R.id.b_tab_order)
-        tv_add_product = view.findViewById(R.id.tv_add_product) as TextView
+        tv_product = view.findViewById(R.id.tv_product) as TextView
         dashboardViewModel = ViewModelProvider(this).get(DashboardViewModel::class.java)
         onClick()
         getDashboardData()
@@ -107,11 +108,11 @@ class DashboardTabFragment : Fragment() {
     }
 
     private fun onClick() {
-        tv_add_product!!.setOnClickListener {
+        tv_product!!.setOnClickListener {
             Log.d(TAG, "onCreateView: ")
 
 
-            MainActivity.loadFragment(AddMainProductFragment(), Variables.TAG_ADD_MAIN_PRODUCT)
+            MainActivity.loadFragment(productList(), Variables.TAG_PRODUCT_LIST)
 
         }
     }

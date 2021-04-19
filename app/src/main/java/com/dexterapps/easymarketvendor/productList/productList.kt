@@ -14,6 +14,7 @@ import com.dexterapps.easymarketvendor.R
 import com.dexterapps.easymarketvendor.addproduct.AddProductFragment
 import com.dexterapps.easymarketvendor.config.Variables
 import com.dexterapps.easymarketvendor.home.NewOrderTabFragment
+import com.dexterapps.easymarketvendor.mainProduct.AddMainProductFragment
 
 
 class productList : Fragment() {
@@ -26,7 +27,10 @@ class productList : Fragment() {
         // Inflate the layout for this fragment
         val view: View = inflater.inflate(R.layout.fragment_product_list, container, false)
 
-
+        MainActivity.nav_back_btn.setOnClickListener {
+            MainActivity.back()
+        }
+        MainActivity.hideShow(Variables.NAME_PRODUCT_LIST, true)
         val rvProduct: RecyclerView = view.findViewById(R.id.rv_productList)
 
         val productList = ArrayList<ProductListModel>()
@@ -80,8 +84,9 @@ class productList : Fragment() {
         tvAddProduct!!.setOnClickListener {
 
             MainActivity.loadFragment(
-                AddProductFragment(),
-                Variables.TAG_ADD_PRODUCT
+                AddMainProductFragment
+                    (),
+                Variables.TAG_ADD_MAIN_PRODUCT
             )
 
         }
