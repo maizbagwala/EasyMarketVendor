@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/curved_background"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/profile_upload_card"
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="10dp">
+
+                <TextView
+                    android:id="@+id/tv_upload_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/dp_10"
+                    android:gravity="center"
+                    android:text=" Please \n Upload \n Profile \n Picture "
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/iv_upload_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </androidx.cardview.widget.CardView>
+
+
+            <EditText
+                android:id="@+id/d_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/custom_edittext_curve"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center_vertical|top"
+                android:hint="Delivery Person Name"
+                android:imeOptions="actionNext"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="15dp"
+                android:singleLine="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/d_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/custom_edittext_curve"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center_vertical|top"
+                android:hint="Email"
+                android:imeOptions="actionNext"
+                android:paddingHorizontal="@dimen/dp_10"
+                android:paddingVertical="15dp"
+                android:singleLine="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/d_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/custom_edittext_curve"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center_vertical|top"
+                android:hint="Mobile Number"
+                android:imeOptions="actionNext"
+                android:inputType="phone"
+                android:paddingHorizontal="@dimen/dp_10"
+                android:paddingVertical="15dp"
+                android:singleLine="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/d_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/custom_edittext_curve"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center_vertical|top"
+                android:hint="password"
+                android:imeOptions="actionNext"
+                android:inputType="textPassword"
+                android:paddingHorizontal="@dimen/dp_10"
+                android:paddingVertical="15dp"
+                android:singleLine="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/d_lic_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/custom_edittext_curve"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center_vertical|top"
+                android:hint="License No"
+                android:imeOptions="actionNext"
+                android:paddingHorizontal="@dimen/dp_10"
+                android:paddingVertical="15dp"
+                android:singleLine="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textColor="@color/black" />
+
+
+            <EditText
+                android:id="@+id/d_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/custom_edittext_curve"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center_vertical|top"
+                android:hint="Address"
+                android:imeOptions="actionDone"
+                android:paddingHorizontal="@dimen/dp_10"
+                android:paddingVertical="15dp"
+                android:singleLine="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginVertical="@dimen/dp_10"
+                android:fontFamily="@font/poppins_regular"
+                android:text="License Image :"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/license_upload_card"
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:layout_gravity="start"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="10dp">
+
+                <TextView
+                    android:id="@+id/tv_upload_license"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/dp_10"
+                    android:gravity="center"
+                    android:text=" Please \n Upload \n License "
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/iv_upload_license"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/btnRegisterDelivery"
+                android:layout_width="@dimen/dp_190"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginVertical="@dimen/dp_20"
+                android:background="@drawable/ic_c_green_rectangle"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"
+                android:text="Register"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
+

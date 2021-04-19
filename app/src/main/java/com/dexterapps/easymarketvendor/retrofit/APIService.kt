@@ -4,10 +4,13 @@ import com.dexterapps.easymarketvendor.delivery_slots.model.SlotResponse
 import com.dexterapps.easymarketvendor.home.model.DashboardResponse
 import com.dexterapps.easymarketvendor.home.model.OrderResponse
 import com.dexterapps.easymarketvendor.login.model.LoginResponse
+import com.dexterapps.easymarketvendor.myDeliveryPerson.model.DeliveryPersonResponse
 import com.dexterapps.easymarketvendor.offerCreation.model.OfferCreationModel
 import com.dexterapps.easymarketvendor.offerCreation.model.offerResponse
 import com.dexterapps.easymarketvendor.register.model.businessCategoryModel
 import com.dexterapps.easymarketvendor.register.model.registerResponse
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -64,6 +67,23 @@ interface APIService {
 //        @Query("id") para1: String,
 //        @Header("Authorization") authHeader: String?
 //    ): Call<AddAddressResponse>
+    @Multipart
+    @POST("vendor/adddriver")
+    fun addDeliveryPerson(
+        @Part("store_id") id: RequestBody,
+        @Part("d_name") d_name: RequestBody,
+        @Part("email") email: RequestBody,
+        @Part("mobile_no") mobile_no: RequestBody,
+        @Part("password") password: RequestBody,
+        @Part("lic_no") lic_no: RequestBody,
+        @Part("address") address: RequestBody,
+        @Part lic_img: MultipartBody.Part,
+        @Part profile_img: MultipartBody.Part,
+    ): Call<DeliveryPersonResponse>
+
+    @GET("vendor/driverlist")
+    fun getDeliveryPerson(@Query("id") id: Int): Call<DeliveryPersonResponse>
+
     @GET("vendor/order/pendinglist")
     fun getPendingOrder(
         @Query("user_id") id: Int
